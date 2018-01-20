@@ -1,0 +1,37 @@
+# =============== #
+# Unity generated #
+# =============== #
+GroupGame/Temp/
+GroupGame/Library/
+
+# Visual Studio 2015 cache directory
+GroupGame/.vs/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+GroupGame/ExportedObj/
+GroupGame/obj/
+GroupGame/*.svd
+GroupGame/*.userprefs
+GroupGame/*.csproj
+GroupGame/*.pidb
+GroupGame/*.suo
+GroupGame/*.sln
+GroupGame/*.user
+GroupGame/*.unityproj
+GroupGame/*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+GroupGame/.DS_Store
+GroupGame/.DS_Store?
+GroupGame/._*
+GroupGame/.Spotlight-V100
+GroupGame/.Trashes
+GroupGame/ehthumbs.db
+GroupGame/Thumbs.db
+GroupGame/Assets/_scenes/etc.meta~parent of cc66dab... More Enviroment Stuff added. Desert area and mountain added.meta
+GroupGame/Assets/_scenes/etc.meta~HEAD.meta
+GroupGame/Assets/Textures/Thumbs.db.meta
