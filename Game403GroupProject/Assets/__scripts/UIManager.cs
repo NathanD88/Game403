@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour {
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(this);
     }
 	
 	// Update is called once per frame
