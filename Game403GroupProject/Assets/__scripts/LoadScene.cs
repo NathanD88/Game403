@@ -23,6 +23,7 @@ public class LoadScene : MonoBehaviour {
             //Destroy(this);
         }
         DontDestroyOnLoad(this);
+        screen_width = Screen.width;
     }
 
     // Update is called once per frame
@@ -48,9 +49,10 @@ public class LoadScene : MonoBehaviour {
         async_op.allowSceneActivation = false;
 
         fTime = 0f;
-        Image loadingBar = GameObject.Find("loadingBar").GetComponent<Image>();
+        Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
         Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
-        loadingBar.fillAmount = 0;
+        //loadingBar.fillAmount = 0;
+        loadingBar.rectTransform.sizeDelta = new Vector2 (screen_width, 30);
         loadingText.text = "0%";
 
         while (async_op.isDone == false)
@@ -62,7 +64,7 @@ public class LoadScene : MonoBehaviour {
             if (async_op.progress >= 0.9f)
             {
                 //fill image
-                loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, 1f, fTime);
+                //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, 1f, fTime);
 
                 //25 offset ( half size of image )
                 float scr_pos_x = (loadingBar.fillAmount * Screen.width) + image_offsetX;
@@ -81,10 +83,10 @@ public class LoadScene : MonoBehaviour {
             }
             else
             {
-                loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, async_op.progress, fTime);
+                //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, async_op.progress, fTime);
 
                 //25 offset ( half size of image )
-                float scr_pos_x = (loadingBar.fillAmount * screen_width) + image_offsetX;
+                //float scr_pos_x = (loadingBar.fillAmount * screen_width) + image_offsetX;
                 //loading_screen_image.rectTransform.anchoredPosition = new Vector2(scr_pos_x, image_offsetY);
                 // Debug.Log(loading_screen_image.rectTransform.anchoredPosition);
                 float progress_num_ = loadingBar.fillAmount * 100.0f;
