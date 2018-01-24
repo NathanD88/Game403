@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour {
     public static LoadScene Instance = null;
 
+    private CanvasScaler cScale;
     private float fTime;
     private float screen_width;
     private float image_offsetX = 25f;
     private float image_offsetY = -15f;
+    private float loadingChunk = 0f;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +26,7 @@ public class LoadScene : MonoBehaviour {
         }
         DontDestroyOnLoad(this);
         screen_width = Screen.width;
+        loadingChunk = screen_width / 100;
     }
 
     // Update is called once per frame
@@ -51,8 +54,9 @@ public class LoadScene : MonoBehaviour {
         fTime = 0f;
         Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
         Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
+        cScale = GameObject.Find("Canvas").GetComponent<CanvasScaler>();
         //loadingBar.fillAmount = 0;
-        loadingBar.rectTransform.sizeDelta = new Vector2 (screen_width, 30);
+        loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width, 30);
         loadingText.text = "0%";
 
         while (async_op.isDone == false)
@@ -65,13 +69,14 @@ public class LoadScene : MonoBehaviour {
             {
                 //fill image
                 //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, 1f, fTime);
-
+                float w = Screen.width - (Screen.width * async_op.progress);
+                loadingBar.rectTransform.sizeDelta = new Vector2(w, 30);
                 //25 offset ( half size of image )
                 float scr_pos_x = (loadingBar.fillAmount * Screen.width) + image_offsetX;
                 //loading_screen_image.rectTransform.anchoredPosition = new Vector2(scr_pos_x, image_offsetY);
                 // Debug.Log(loading_screen_image.rectTransform.anchoredPosition);
 
-                float progress_num = loadingBar.fillAmount * 100.0f;
+                float progress_num = async_op.progress * 100.0f;
                 int roundNum = Mathf.RoundToInt(progress_num);
 
                 loadingText.text = roundNum.ToString() + "%";
@@ -84,12 +89,13 @@ public class LoadScene : MonoBehaviour {
             else
             {
                 //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, async_op.progress, fTime);
-
+                float w = Screen.width - (Screen.width * async_op.progress);
+                loadingBar.rectTransform.sizeDelta = new Vector2(w, 30);
                 //25 offset ( half size of image )
                 //float scr_pos_x = (loadingBar.fillAmount * screen_width) + image_offsetX;
                 //loading_screen_image.rectTransform.anchoredPosition = new Vector2(scr_pos_x, image_offsetY);
                 // Debug.Log(loading_screen_image.rectTransform.anchoredPosition);
-                float progress_num_ = loadingBar.fillAmount * 100.0f;
+                float progress_num_ = async_op.progress * 100.0f;
                 int round_progress_num = Mathf.RoundToInt(progress_num_);
                 loadingText.text = round_progress_num.ToString() + "%";
 
