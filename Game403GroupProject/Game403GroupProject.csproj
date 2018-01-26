@@ -287,6 +287,7 @@
   <ItemGroup>
     <Compile Include="Assets\__scripts\Game\AIController.cs" />
     <Compile Include="Assets\__scripts\Game\CarEngine.cs" />
+    <Compile Include="Assets\__scripts\Game\GameController.cs" />
     <Compile Include="Assets\__scripts\Game\Path.cs" />
     <Compile Include="Assets\__scripts\Game\WayPoint.cs" />
     <Compile Include="Assets\__scripts\LoadScene.cs" />
