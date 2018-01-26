@@ -285,11 +285,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\__scripts\Game\AIController.cs" />
+    <Compile Include="Assets\__scripts\Game\CarEngine.cs" />
+    <Compile Include="Assets\__scripts\Game\Path.cs" />
+    <Compile Include="Assets\__scripts\Game\WayPoint.cs" />
     <Compile Include="Assets\__scripts\LoadScene.cs" />
     <Compile Include="Assets\__scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\__scripts\MainMenu\RotatePlatform.cs" />
     <Compile Include="Assets\__scripts\SoundManager.cs" />
     <Compile Include="Assets\__scripts\UIManager.cs" />
+    <Compile Include="Assets\Mountain Terrain\Misc\CameraDefault.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
