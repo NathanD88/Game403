@@ -16,15 +16,16 @@ public class LoadScene : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        if (Instance = null)
+        DontDestroyOnLoad(this);
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if (Instance != this)
+        if (Instance != this)
         {
-            //Destroy(this);
+           Destroy(this);
         }
-        DontDestroyOnLoad(this);
+        
         screen_width = Screen.width;
         loadingChunk = screen_width / 100;
     }
@@ -44,20 +45,19 @@ public class LoadScene : MonoBehaviour {
     }
     private IEnumerator LoadSceneAsync(string nextscene)
     {
-        
+        float finishtime = Time.time + 5f;
         // wating 1 sec to look good
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1f);
 
         AsyncOperation async_op = SceneManager.LoadSceneAsync(nextscene);
         async_op.allowSceneActivation = false;
-
         fTime = 0f;
         Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
         Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
         cScale = GameObject.Find("Canvas").GetComponent<CanvasScaler>();
         //loadingBar.fillAmount = 0;
-        loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width, 30);
-        loadingText.text = "0%";
+        loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width - (Screen.width * async_op.progress), 30);
+        loadingText.text = (async_op.progress * 100).ToString() + "%";
 
         while (async_op.isDone == false)
         {
