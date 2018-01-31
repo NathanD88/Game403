@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
     public static UIManager Instance = null;
-
-
+    
 	// Use this for initialization
 	void Start () {
-        if (Instance = null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -25,5 +24,22 @@ public class UIManager : MonoBehaviour {
 	}
 
     //Functions go here
+    private GameObject GetObject(string uiName)
+    {
+        GameObject obj = GameObject.Find(uiName);
+        return obj;
+    }
+    public void ShowUIContent(GameObject obj)
+    {
+        if(!obj.activeSelf)
+        {
+            obj.SetActive(true);
+        }
+        else
+        {
+            obj.SetActive(false);
+        }
+    }
 
+    
 }

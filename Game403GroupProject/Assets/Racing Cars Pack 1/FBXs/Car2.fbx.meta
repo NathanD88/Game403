@@ -4,6 +4,28 @@ timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Car2 1
+    100004: Front_Left_Wheel
+    100006: Front_Right_Wheel
+    100008: Rear_Left_Wheel
+    100010: Rear_Right_Wheel
+    400000: //RootNode
+    400002: Car2 1
+    400004: Front_Left_Wheel
+    400006: Front_Right_Wheel
+    400008: Rear_Left_Wheel
+    400010: Rear_Right_Wheel
+    2300000: Car2 1
+    2300002: Front_Left_Wheel
+    2300004: Front_Right_Wheel
+    2300006: Rear_Left_Wheel
+    2300008: Rear_Right_Wheel
+    3300000: Car2 1
+    3300002: Front_Left_Wheel
+    3300004: Front_Right_Wheel
+    3300006: Rear_Left_Wheel
+    3300008: Rear_Right_Wheel
     4300000: roue_av_droit
     4300002: roue_ar_droit
     4300004: bumper_arriere
@@ -22,6 +44,7 @@ ModelImporter:
     4300030: Front_Left_Wheel
     4300032: Rear_Left_Wheel
     4300034: Car2
+    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1

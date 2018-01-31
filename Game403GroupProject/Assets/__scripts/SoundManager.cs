@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (Instance = null)
+        if (Instance == null)
         {
             Instance = this;
         }

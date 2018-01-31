@@ -16,7 +16,10 @@ public class LoadScene : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
         DontDestroyOnLoad(this);
+=======
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
         if (Instance == null)
         {
             Instance = this;
@@ -37,20 +40,31 @@ public class LoadScene : MonoBehaviour {
     }
 
     //custom function go here
-    public void LoadSceneByButton(string scene)
+
+    public void LoadNextScene(string sName)
     {
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
         SceneManager.LoadScene("LoadingScreen");
-        StartCoroutine(LoadSceneAsync(scene));
-        //LoadSceneAsync.LoadScene(scene);
+        StartCoroutine(LoadNextSceneAsync(sName));
     }
-    private IEnumerator LoadSceneAsync(string nextscene)
+    private IEnumerator LoadNextSceneAsync(string nextScene)
     {
+<<<<<<< HEAD
         float finishtime = Time.time + 5f;
+=======
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
         // wating 1 sec to look good
         yield return new WaitForSeconds(1f);
 
-        AsyncOperation async_op = SceneManager.LoadSceneAsync(nextscene);
+        Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
+        loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
+        float endTime = Time.time + 5f;
+        AsyncOperation async_op = SceneManager.LoadSceneAsync(nextScene);
         async_op.allowSceneActivation = false;
+<<<<<<< HEAD
         fTime = 0f;
         Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
         Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
@@ -58,51 +72,25 @@ public class LoadScene : MonoBehaviour {
         //loadingBar.fillAmount = 0;
         loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width - (Screen.width * async_op.progress), 30);
         loadingText.text = (async_op.progress * 100).ToString() + "%";
+=======
 
-        while (async_op.isDone == false)
+        bool done = false;
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
+
+        while(!done)
         {
-            
             yield return new WaitForSeconds(0.1f);
-            fTime += Time.smoothDeltaTime;
-
-            if (async_op.progress >= 0.9f)
+            float progress = Time.time / endTime;
+            if (Time.time >= endTime)
             {
-                //fill image
-                //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, 1f, fTime);
-                float w = Screen.width - (Screen.width * async_op.progress);
-                loadingBar.rectTransform.sizeDelta = new Vector2(w, 30);
-                //25 offset ( half size of image )
-                float scr_pos_x = (loadingBar.fillAmount * Screen.width) + image_offsetX;
-                //loading_screen_image.rectTransform.anchoredPosition = new Vector2(scr_pos_x, image_offsetY);
-                // Debug.Log(loading_screen_image.rectTransform.anchoredPosition);
-
-                float progress_num = async_op.progress * 100.0f;
-                int roundNum = Mathf.RoundToInt(progress_num);
-
-                loadingText.text = roundNum.ToString() + "%";
-
-                if (Mathf.Approximately(loadingBar.fillAmount, 1f) == true)
-                {
-                    async_op.allowSceneActivation = true;
-                }
+                progress = 0;
+                async_op.allowSceneActivation = true;
+                done = true;
             }
             else
             {
-                //loadingBar.fillAmount = Mathf.Lerp(loadingBar.fillAmount, async_op.progress, fTime);
-                float w = Screen.width - (Screen.width * async_op.progress);
-                loadingBar.rectTransform.sizeDelta = new Vector2(w, 30);
-                //25 offset ( half size of image )
-                //float scr_pos_x = (loadingBar.fillAmount * screen_width) + image_offsetX;
-                //loading_screen_image.rectTransform.anchoredPosition = new Vector2(scr_pos_x, image_offsetY);
-                // Debug.Log(loading_screen_image.rectTransform.anchoredPosition);
-                float progress_num_ = async_op.progress * 100.0f;
-                int round_progress_num = Mathf.RoundToInt(progress_num_);
-                loadingText.text = round_progress_num.ToString() + "%";
-
-                if (loadingBar.fillAmount >= async_op.progress)
-                {
-                    fTime = 0f;
-                }
+                float width = Screen.width - (Screen.width * progress);
+                loadingBar.rectTransform.sizeDelta = new Vector2(width, 30);
             }
         }
     }
