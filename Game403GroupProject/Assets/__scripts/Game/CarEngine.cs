@@ -53,8 +53,8 @@ public class CarEngine : MonoBehaviour {
     }
     private void Drive()
     {
-        wheelFL.motorTorque = 120f;
-        wheelFR.motorTorque = 120f;
+        wheelFL.motorTorque = 120;
+        wheelFR.motorTorque = 120;
         
     }
     private void ApplySteer()

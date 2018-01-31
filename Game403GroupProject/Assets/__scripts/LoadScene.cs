@@ -39,6 +39,10 @@ public class LoadScene : MonoBehaviour {
 
     public void LoadNextScene(string sName)
     {
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
         SceneManager.LoadScene("LoadingScreen");
         StartCoroutine(LoadNextSceneAsync(sName));
     }
