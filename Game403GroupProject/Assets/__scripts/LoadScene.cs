@@ -16,15 +16,19 @@ public class LoadScene : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
+        DontDestroyOnLoad(this);
+=======
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
         if (Instance == null)
         {
             Instance = this;
         }
-        else if (Instance != this)
+        if (Instance != this)
         {
-            //Destroy(this);
+           Destroy(this);
         }
-        DontDestroyOnLoad(this);
+        
         screen_width = Screen.width;
         loadingChunk = screen_width / 100;
     }
@@ -48,16 +52,30 @@ public class LoadScene : MonoBehaviour {
     }
     private IEnumerator LoadNextSceneAsync(string nextScene)
     {
+<<<<<<< HEAD
+        float finishtime = Time.time + 5f;
+=======
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
         // wating 1 sec to look good
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1f);
 
         Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
         loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
         float endTime = Time.time + 5f;
         AsyncOperation async_op = SceneManager.LoadSceneAsync(nextScene);
         async_op.allowSceneActivation = false;
+<<<<<<< HEAD
+        fTime = 0f;
+        Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
+        Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
+        cScale = GameObject.Find("Canvas").GetComponent<CanvasScaler>();
+        //loadingBar.fillAmount = 0;
+        loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width - (Screen.width * async_op.progress), 30);
+        loadingText.text = (async_op.progress * 100).ToString() + "%";
+=======
 
         bool done = false;
+>>>>>>> cc1bcb504a477a191a63b5cbcaf0522c9f3352a8
 
         while(!done)
         {
