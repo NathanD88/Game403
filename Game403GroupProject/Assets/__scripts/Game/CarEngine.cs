@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CarEngine : MonoBehaviour {
     public Transform path;
-    public float maxSteerAngle = 180;
+    private float maxSteerAngle = 80;
     public WheelCollider wheelFL;
     public WheelCollider wheelFR;
+    public WheelCollider wheelRL;
+    public WheelCollider wheelRR;
 
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
 	// Use this for initialization
 	void Start () {
         Transform[] pointTransform = path.GetComponentsInChildren<Transform>();
-        Debug.Log(pointTransform.Length);
         points = new List<Transform>();
         for(int i = 0;i < pointTransform.Length; i++)
         {
@@ -38,24 +39,17 @@ public class CarEngine : MonoBehaviour {
             if(currentPoint == points.Count - 1)
             {
                 currentPoint = 0;
-                Debug.Log(points[currentPoint].name);
             }
             else
             {
                 currentPoint++;
-                Debug.Log(points[currentPoint].name);
             }
-        }
-        else
-        {
-            Debug.Log(points[currentPoint].name);
         }
     }
     private void Drive()
     {
         wheelFL.motorTorque = 120;
         wheelFR.motorTorque = 120;
-        
     }
     private void ApplySteer()
     {
@@ -63,5 +57,15 @@ public class CarEngine : MonoBehaviour {
         float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
         wheelFL.steerAngle = newSteer;
         wheelFR.steerAngle = newSteer;
+        if(wheelFL.steerAngle != 0f || wheelFR.steerAngle != 0f)
+        {
+            ApplyBrakes();
+        }
+    }
+
+    private void ApplyBrakes()
+    {
+        wheelFL.motorTorque = -120;
+        wheelFR.motorTorque = -120;
     }
 }
