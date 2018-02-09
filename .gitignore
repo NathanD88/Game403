@@ -1,37 +1,37 @@
 # =============== #
 # Unity generated #
 # =============== #
-GroupGame/Temp/
-GroupGame/Library/
+Game403GroupProject/Temp/
+Game403GroupProject/Library/
 
 # Visual Studio 2015 cache directory
-GroupGame/.vs/
+Game403GroupProject/.vs/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
-GroupGame/ExportedObj/
-GroupGame/obj/
-GroupGame/*.svd
-GroupGame/*.userprefs
-GroupGame/*.csproj
-GroupGame/*.pidb
-GroupGame/*.suo
-GroupGame/*.sln
-GroupGame/*.user
-GroupGame/*.unityproj
-GroupGame/*.booproj
+Game403GroupProject/ExportedObj/
+Game403GroupProject/obj/
+Game403GroupProject/*.svd
+Game403GroupProject/*.userprefs
+Game403GroupProject/*.csproj
+Game403GroupProject/*.pidb
+Game403GroupProject/*.suo
+Game403GroupProject/*.sln
+Game403GroupProject/*.user
+Game403GroupProject/*.unityproj
+Game403GroupProject/*.booproj
 
 # ============ #
 # OS generated #
 # ============ #
-GroupGame/.DS_Store
-GroupGame/.DS_Store?
-GroupGame/._*
-GroupGame/.Spotlight-V100
-GroupGame/.Trashes
-GroupGame/ehthumbs.db
-GroupGame/Thumbs.db
-GroupGame/Assets/_scenes/etc.meta~parent of cc66dab... More Enviroment Stuff added. Desert area and mountain added.meta
-GroupGame/Assets/_scenes/etc.meta~HEAD.meta
-GroupGame/Assets/Textures/Thumbs.db.meta
+Game403GroupProject/.DS_Store
+Game403GroupProject/.DS_Store?
+Game403GroupProject/._*
+Game403GroupProject/.Spotlight-V100
+Game403GroupProject/.Trashes
+Game403GroupProject/ehthumbs.db
+Game403GroupProject/Thumbs.db
+Game403GroupProject/Assets/_scenes/etc.meta~parent of cc66dab... More Enviroment Stuff added. Desert area and mountain added.meta
+Game403GroupProject/Assets/_scenes/etc.meta~HEAD.meta
+Game403GroupProject/Assets/Textures/Thumbs.db.meta
