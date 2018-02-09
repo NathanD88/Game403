@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
     public GameObject pauseMenu;
+    private HUDController hudController;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        hudController = GameObject.FindObjectOfType<HUDController>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if(Input.GetKeyDown(KeyCode.Return))
         {
             if(pauseMenu.activeSelf)
