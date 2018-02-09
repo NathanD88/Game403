@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/__scenes/EnergyShield.unity
+- path: Assets/__scenes/HUDScene.unity
   isLoaded: 1
   isActive: 1
