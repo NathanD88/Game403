@@ -7,6 +7,15 @@ public class GameController : MonoBehaviour
     public GameObject pauseMenu;
     private HUDController hudController;
 
+    public enum powerups
+    {
+        Armor,
+        Boost,
+        Missile,
+        Oil,
+        POWERUP_COUNT
+    }
+
 	// Use this for initialization
 	void Start ()
     {
