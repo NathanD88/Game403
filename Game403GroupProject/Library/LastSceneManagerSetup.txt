@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/__scenes/HUDScene.unity
-  isLoaded: 1
-  isActive: 1
