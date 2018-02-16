@@ -3,19 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
-    public static UIManager Instance = null;
     
+    public static UIManager Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<UIManager>();
+                if(instance == null)
+                {
+                    GameObject go = new GameObject("UIManager");
+                    instance = go.AddComponent<UIManager>();
+                    DontDestroyOnLoad(go);
+                }
+            }
+            return instance;
+        }
+    }
+
+    private static UIManager instance = null;
+
+    public UIManager GetInstance()
+    {
+        return Instance;
+    }
 	// Use this for initialization
 	void Start () {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        if (Instance != this)
-        {
-            Destroy(this);
-        }
-        DontDestroyOnLoad(this);
+
     }
 	
 	// Update is called once per frame
@@ -26,11 +41,12 @@ public class UIManager : MonoBehaviour {
     //Functions go here
     private GameObject GetObject(string uiName)
     {
-        GameObject obj = GameObject.Find(uiName);
+        GameObject obj = GameObject.Find("Canvas").transform.Find(uiName).gameObject;
         return obj;
     }
-    public void ShowUIContent(GameObject obj)
+    public void ShowUIContent(string name)
     {
+        GameObject obj = GetObject(name);
         if(!obj.activeSelf)
         {
             obj.SetActive(true);
@@ -39,5 +55,7 @@ public class UIManager : MonoBehaviour {
         {
             obj.SetActive(false);
         }
-    }    
+    }
+
+    
 }
