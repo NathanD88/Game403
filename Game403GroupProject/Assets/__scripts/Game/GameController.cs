@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     public GameObject cd_text;
 
     private Text countDown;
+    private float startTime = 0f;
+    private bool isGameStarted = false;
 
     public enum powerups
     {
@@ -20,6 +22,8 @@ public class GameController : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        
+        hudController = GameObject.FindObjectOfType<HUDController>();
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
 	}
@@ -39,7 +43,8 @@ public class GameController : MonoBehaviour {
             UIManager.Instance.ShowUIContent("pauseMenu");
             
         }
-	}
+        hudController.RaceTime = Time.time - startTime;
+    }
     public void QuitButton()
     {
         LoadScene.Instance.LoadNextScene("StartScreen");
@@ -47,6 +52,7 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator StartCountdown()
     {
+        hudController.DisableRaceTimeText();
         int cnt = 5;
         countDown.text = cnt.ToString();
         while(cnt > 0)
@@ -60,11 +66,19 @@ public class GameController : MonoBehaviour {
     }
     private void StartRace()
     {
+        startTime = Time.time;
+        hudController.RaceTime = Time.time - startTime;
+        hudController.EnableRaceTimeText();
         GameObject[] allCars = GameObject.FindGameObjectsWithTag("Car");
         Debug.Log(allCars.Length);
         foreach(GameObject g in allCars)
         {
             g.GetComponent<CarEngine>().StartGame(true);
         }
+        isGameStarted = true;
+    }
+    public bool IsGameStarted()
+    {
+        return isGameStarted;
     }
 }

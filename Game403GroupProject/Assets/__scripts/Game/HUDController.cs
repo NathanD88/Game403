@@ -16,6 +16,8 @@ public class HUDController : MonoBehaviour
 
     private bool lapTimeShowing;
 
+    private GameController _gameController;
+
     public float Speed
     {
         get
@@ -152,6 +154,7 @@ public class HUDController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _gameController = GameObject.FindObjectOfType<GameController>();
         // Defaults
         lapTimeShowing = false;
         heldPowerup = -1;
@@ -174,10 +177,10 @@ public class HUDController : MonoBehaviour
         // Demo purposes ***
         currentArmor = Mathf.Abs(Mathf.Sin(Time.time)) * 10.0f;
         speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
-        raceTime = Time.time;
-        if (Time.time % 4 >= 3 && !lapTimeShowing)
+        //raceTime = Time.time;
+        if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
         {
-            StartCoroutine(showLapTime(Time.time, 2.0f));
+            StartCoroutine(showLapTime(RaceTime, 2.0f));
         }
         // ***
 
@@ -259,5 +262,12 @@ public class HUDController : MonoBehaviour
 
         return s;
     }
-
+    public void DisableRaceTimeText()
+    {
+        raceTimeText.gameObject.SetActive(false);
+    }
+    public void EnableRaceTimeText()
+    {
+        raceTimeText.gameObject.SetActive(true);
+    }
 }
