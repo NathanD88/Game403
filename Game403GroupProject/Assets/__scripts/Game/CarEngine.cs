@@ -10,6 +10,7 @@ public class CarEngine : MonoBehaviour {
     public WheelCollider wheelRL;
     public WheelCollider wheelRR;
 
+    private bool start = false;
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
 	// Use this for initialization
@@ -27,9 +28,12 @@ public class CarEngine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        ApplySteer();
-        Drive();
-        CheckWayPointDistance();
+        if (start)
+        {
+            ApplySteer();
+            Drive();
+            CheckWayPointDistance();
+        }
 	}
 
     private void CheckWayPointDistance()
@@ -67,5 +71,9 @@ public class CarEngine : MonoBehaviour {
     {
         wheelFL.motorTorque = -120;
         wheelFR.motorTorque = -120;
+    }
+    public void StartGame(bool b)
+    {
+        start = b;
     }
 }
