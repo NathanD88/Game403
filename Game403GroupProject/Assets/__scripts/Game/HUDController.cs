@@ -16,6 +16,10 @@ public class HUDController : MonoBehaviour
 
     private bool lapTimeShowing;
 
+    [Header("Game Controller Reference")]
+    [SerializeField]
+    private GameController _gameController;
+
     public float Speed
     {
         get
@@ -132,7 +136,7 @@ public class HUDController : MonoBehaviour
 
     // HUD Element References
     [Header("Element References")]
-    public RectTransform currentArmorHUD;
+    public Image currentArmorHUD;
     public RectTransform speedometerNeedleHUD;
     public Text lapText;
     public Text raceTimeText;
@@ -153,6 +157,7 @@ public class HUDController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //_gameController = GameObject.FindObjectOfType<GameController>();
         // Defaults
         lapTimeShowing = false;
         heldPowerup = -1;
@@ -175,10 +180,10 @@ public class HUDController : MonoBehaviour
         // Demo purposes ***
         currentArmor = Mathf.Abs(Mathf.Sin(Time.time)) * 10.0f;
         speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
-        raceTime = Time.time;
-        if (Time.time % 4 >= 3 && !lapTimeShowing)
+        //raceTime = Time.time;
+        if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
         {
-            StartCoroutine(showLapTime(Time.time, 2.0f));
+            StartCoroutine(showLapTime(RaceTime, 2.0f));
         }
         // ***
 
@@ -187,7 +192,7 @@ public class HUDController : MonoBehaviour
         float raceTimeSeconds = raceTime % 60;
 
         // Update HUD elements
-        currentArmorHUD.localScale = new Vector3(currentArmor / maxArmor, 1.0f, 1.0f);
+        currentArmorHUD.fillAmount = (currentArmor / maxArmor);
         lapText.text = currentLap.ToString() + " / " + totalLaps.ToString();
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
@@ -281,5 +286,12 @@ public class HUDController : MonoBehaviour
 
         return s;
     }
-
+    public void DisableRaceTimeText()
+    {
+        raceTimeText.gameObject.SetActive(false);
+    }
+    public void EnableRaceTimeText()
+    {
+        raceTimeText.gameObject.SetActive(true);
+    }
 }
