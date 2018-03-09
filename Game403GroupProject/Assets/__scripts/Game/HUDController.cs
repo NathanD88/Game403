@@ -143,6 +143,7 @@ public class HUDController : MonoBehaviour
     public Text lapTimeText;
     public Text positionText;
     public Image heldItemHUD;
+    public Text wrongWayText;
 
     [Space(10)]
     [Header("Speedometer Needle")]
@@ -239,6 +240,27 @@ public class HUDController : MonoBehaviour
     public void hideLapTime()
     {
         lapTimeText.enabled = false;
+    }
+
+    public IEnumerator showWrongWay(bool isWrongWay)
+    {
+        isWrongWay = false;
+
+        if(isWrongWay == false)
+        {
+            wrongWayText.enabled = false;
+        }
+        else
+        {
+            wrongWayText.enabled = true;
+        }
+
+        // Display lap time
+        //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
+        //lapTimeText.enabled = true;
+
+        // Wait for the specified time before hiding again
+        yield return new WaitForSeconds(timeToDisplay);
     }
 
     // Convert an integer into an ordinal number
