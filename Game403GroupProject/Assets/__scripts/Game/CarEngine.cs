@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarEngine : MonoBehaviour {
     public Transform path;
-    private float maxSteerAngle = 80;
+    public float maxSteerAngle = 80;
     public WheelCollider wheelFL;
     public WheelCollider wheelFR;
     public WheelCollider wheelRL;
@@ -13,8 +13,10 @@ public class CarEngine : MonoBehaviour {
     private bool start = false;
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
+    private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
+        rb = GetComponent<Rigidbody>();
         Transform[] pointTransform = path.GetComponentsInChildren<Transform>();
         points = new List<Transform>();
         for(int i = 0;i < pointTransform.Length; i++)
@@ -33,6 +35,9 @@ public class CarEngine : MonoBehaviour {
             ApplySteer();
             Drive();
             CheckWayPointDistance();
+            Vector3 localVel = transform.InverseTransformDirection(rb.velocity);
+            float forwardSpeed = localVel.z;
+            Debug.Log(forwardSpeed);
         }
 	}
 
@@ -52,8 +57,8 @@ public class CarEngine : MonoBehaviour {
     }
     private void Drive()
     {
-        wheelFL.motorTorque = 120;
-        wheelFR.motorTorque = 120;
+        wheelFL.motorTorque = 150;
+        wheelFR.motorTorque = 150;
     }
     private void ApplySteer()
     {
@@ -61,6 +66,7 @@ public class CarEngine : MonoBehaviour {
         float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
         wheelFL.steerAngle = newSteer;
         wheelFR.steerAngle = newSteer;
+
         if(wheelFL.steerAngle != 0f || wheelFR.steerAngle != 0f)
         {
             ApplyBrakes();
