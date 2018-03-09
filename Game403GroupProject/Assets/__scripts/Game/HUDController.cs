@@ -242,7 +242,7 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
-    public IEnumerator showWrongWay(bool isWrongWay)
+    /*public IEnumerator showWrongWay(bool isWrongWay)
     {
         isWrongWay = false;
 
@@ -261,7 +261,7 @@ public class HUDController : MonoBehaviour
 
         // Wait for the specified time before hiding again
         yield return new WaitForSeconds(timeToDisplay);
-    }
+    }*/
 
     // Convert an integer into an ordinal number
     private string intToOrdinal(int i)
