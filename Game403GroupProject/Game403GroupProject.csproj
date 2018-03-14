@@ -293,6 +293,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\__scripts\Game\!powerups\Boost.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\Missile.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\OilSlick.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\PickupBehaviour.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\Powerup.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\RepairKit.cs" />
+    <Compile Include="Assets\__scripts\Game\!temp_scripts\CarMovement.cs" />
     <ProjectReference Include="Game403GroupProject.Plugins.csproj">
       <Project>{0B4A6642-6783-D5A9-2277-F4D9702CF535}</Project>
       <Name>Game403GroupProject.Plugins</Name>
@@ -301,6 +308,7 @@
   <ItemGroup>
     <Compile Include="Assets\__scripts\EnergyShield\Shielding.cs" />
     <Compile Include="Assets\__scripts\Game\AIController.cs" />
+    <Compile Include="Assets\__scripts\Game\Car.cs" />
     <Compile Include="Assets\__scripts\Game\CarEngine.cs" />
     <Compile Include="Assets\__scripts\Game\GameController.cs" />
     <Compile Include="Assets\__scripts\Game\HUDController.cs" />

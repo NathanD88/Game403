@@ -12,13 +12,29 @@ public class GameController : MonoBehaviour {
     private float startTime = 0f;
     private bool isGameStarted = false;
 
-    public enum powerups
+    public void GenerateRandomPowerup(GameObject player)
     {
-        Armor,
-        Boost,
-        Missile,
-        Oil,
-        POWERUP_COUNT
+        int random_powerup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
+        Powerup currentpowerup;
+        switch(random_powerup)
+        {
+            case 0:
+                currentpowerup = new RepairKit();
+                break;
+            case 1:
+                currentpowerup = new Boost();
+                break;
+            case 2:
+                currentpowerup = new Missile();
+                break;
+            case 3:
+                currentpowerup = new OilSlick();
+                break;
+            default:
+                currentpowerup = null;
+                break;
+        }
+        player.GetComponent<Car>().SetPowerup(currentpowerup);
     }
 	// Use this for initialization
 	void Start () {
@@ -40,7 +56,7 @@ public class GameController : MonoBehaviour {
             {
                 Time.timeScale = 0f;
             }
-            UIManager.Instance.ShowUIContent("pauseMenu");
+            UIManager.Instance.ShowUIContent(pauseMenu);
             
         }
         hudController.RaceTime = Time.time - startTime;
@@ -62,6 +78,7 @@ public class GameController : MonoBehaviour {
             countDown.text = cnt.ToString();
         }
         cd_text.SetActive(false);
+
         StartRace();
     }
     private void StartRace()
@@ -70,10 +87,13 @@ public class GameController : MonoBehaviour {
         hudController.RaceTime = Time.time - startTime;
         hudController.EnableRaceTimeText();
         GameObject[] allCars = GameObject.FindGameObjectsWithTag("Car");
-        Debug.Log(allCars.Length);
-        foreach(GameObject g in allCars)
+        if (allCars.Length > 1)
         {
-            g.GetComponent<CarEngine>().StartGame(true);
+            Debug.Log(allCars.Length);
+            foreach (GameObject g in allCars)
+            {
+                g.GetComponent<CarEngine>().StartGame(true);
+            }
         }
         isGameStarted = true;
     }

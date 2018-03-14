@@ -453,9 +453,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 125788718}
-  m_LocalRotation: {x: 0.08715234, y: -0.008864968, z: 0.000775583, w: 0.99615526}
-  m_LocalPosition: {x: -0.201, y: 3.525, z: -6.923}
-  m_LocalScale: {x: 0.5000004, y: 0.5, z: 0.5000006}
+  m_LocalRotation: {x: 0.0871558, y: -0, z: -0, w: 0.9961947}
+  m_LocalPosition: {x: -0.12999536, y: 7.1900005, z: -17.250002}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1062682380}
   m_RootOrder: 6
@@ -1211,9 +1211,11 @@ GameObject:
   - component: {fileID: 137283285}
   - component: {fileID: 355654216}
   - component: {fileID: 355654217}
+  - component: {fileID: 355654218}
+  - component: {fileID: 355654219}
   m_Layer: 0
   m_Name: Car1
-  m_TagString: Car
+  m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1239,16 +1241,46 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 355654215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22c2e9a81b702dc499f4e3fb03189910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1239395842}
+  maxSteerAngle: 80
   wheelFL: {fileID: 859446473}
   wheelFR: {fileID: 938892661}
   wheelRL: {fileID: 1066981609}
   wheelRR: {fileID: 226459792}
+--- !u!114 &355654218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355654215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12abcf1aef37ef4892a431db693be5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSteerAngle: 40
+  maxAccel: 120
+  wheelFL: {fileID: 859446473}
+  wheelFR: {fileID: 938892661}
+--- !u!114 &355654219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355654215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  f_left: {fileID: 859446473}
+  f_right: {fileID: 938892661}
 --- !u!1 &437853255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,7 +2523,7 @@ GameObject:
   - component: {fileID: 877491768}
   m_Layer: 0
   m_Name: CarBody
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2953,6 +2985,11 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+  - component: {fileID: 1060371185}
+  - component: {fileID: 1060371184}
+  - component: {fileID: 1060371183}
+  - component: {fileID: 1060371182}
+  - component: {fileID: 1060371181}
   - component: {fileID: 1027882210}
   - component: {fileID: 1027882209}
   - component: {fileID: 1027882208}
@@ -2963,11 +3000,71 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1027882208
+--- !u!114 &1060371181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060371180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdcbc9977180da4a82ae9f95bd72373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &1060371182
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060371180}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 0074f2a4e658f6249b1aa2a96a54e114, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1060371183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060371180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1060371184
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060371180}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1060371185
   m_GameObject: {fileID: 1027882207}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2999,6 +3096,14 @@ Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060371180}
+  m_LocalRotation: {x: -0.35355338, y: 0.1464466, z: 0.35355338, w: 0.8535535}
+  m_LocalPosition: {x: 225.36, y: 0.38, z: 27.2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 45}
   m_GameObject: {fileID: 1027882207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 208.04736, y: 15.137815, z: 30.622345}
@@ -3272,6 +3377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1239395842}
+  maxSteerAngle: 80
   wheelFL: {fileID: 1444455158}
   wheelFR: {fileID: 581796110}
   wheelRL: {fileID: 745885810}
@@ -4931,6 +5037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1239395842}
+  maxSteerAngle: 80
   wheelFL: {fileID: 781791201}
   wheelFR: {fileID: 693559031}
   wheelRL: {fileID: 1362574111}
@@ -5041,6 +5148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1239395842}
+  maxSteerAngle: 80
   wheelFL: {fileID: 540748598}
   wheelFR: {fileID: 1806673433}
   wheelRL: {fileID: 768272737}
