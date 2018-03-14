@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Boost : Powerup {
 
-	public Boost()
+    private HUDController _hudController;
+
+    public Boost(HUDController hc)
     {
-        Debug.Log("boost powerup created");
+        _hudController = hc;
     }
     public override void UsePowerup()
     {
-        Debug.Log("speeeeeeeeeed!!!");
+        _hudController.HeldPowerup = -1;
     }
 }

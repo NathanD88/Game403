@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class OilSlick : Powerup {
 
-	public OilSlick()
+    private HUDController _hudController;
+
+    public OilSlick(HUDController hc)
     {
-        //create oil ref
+        _hudController = hc;
     }
     public override void UsePowerup()
     {
-        Debug.Log("oiled");
+        _hudController.HeldPowerup = -1;
     }
 }

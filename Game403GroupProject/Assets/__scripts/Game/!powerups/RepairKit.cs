@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class RepairKit : Powerup {
 
-	public RepairKit()
+    private HUDController _hudController;
+
+	public RepairKit(HUDController hc)
     {
-        Debug.Log("repair kit created");
+        _hudController = hc;
     }
 
     public override void UsePowerup()
     {
-        Debug.Log("Have some armor");
+        _hudController.HeldPowerup = -1;
     }
 }
-
-/*
- * if(input.getbutton(use)
- *      player.currentPower.usepowerup() 
- */
