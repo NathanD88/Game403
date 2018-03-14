@@ -260,7 +260,7 @@ public class HUDController : MonoBehaviour
         //lapTimeText.enabled = true;
 
         // Wait for the specified time before hiding again
-        yield return new WaitForSeconds(timeToDisplay);
+        yield return new WaitForSeconds(5);
     }
 
     // Convert an integer into an ordinal number
