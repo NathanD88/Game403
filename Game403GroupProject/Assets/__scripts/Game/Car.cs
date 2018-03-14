@@ -8,7 +8,7 @@ public class Car : MonoBehaviour {
     public enum CAR_TYPE {Muscle, Sport, Tuner };
     public CAR_TYPE m_type;
 
-    public WheelCollider f_left, f_right;
+    //public WheelCollider f_left, f_right;
 
     private Rigidbody rb;
 
@@ -16,7 +16,7 @@ public class Car : MonoBehaviour {
 	void Start () {
         //powerup = new RepairKit();
         rb = GetComponent<Rigidbody>();
-        SetCarStats();
+        //SetCarStats();
 	}
 	
 	// Update is called once per frame
