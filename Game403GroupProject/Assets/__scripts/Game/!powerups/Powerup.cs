@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Powerup  {
     
-    
     public enum PowerupType
     {
         RepairKit,

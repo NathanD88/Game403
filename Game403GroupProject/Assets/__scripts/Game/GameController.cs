@@ -19,22 +19,23 @@ public class GameController : MonoBehaviour {
         switch(random_powerup)
         {
             case 0:
-                currentpowerup = new RepairKit();
+                currentpowerup = new RepairKit(hudController);
                 break;
             case 1:
-                currentpowerup = new Boost();
+                currentpowerup = new Boost(hudController);
                 break;
             case 2:
-                currentpowerup = new Missile();
+                currentpowerup = new Missile(hudController);
                 break;
             case 3:
-                currentpowerup = new OilSlick();
+                currentpowerup = new OilSlick(hudController);
                 break;
             default:
                 currentpowerup = null;
                 break;
         }
         player.GetComponent<Car>().SetPowerup(currentpowerup);
+        FindObjectOfType<HUDController>().HeldPowerup = random_powerup;
     }
 	// Use this for initialization
 	void Start () {

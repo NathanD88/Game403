@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Missile : Powerup {
 
-	public Missile()
+    private HUDController _hudController;
+
+    public Missile(HUDController hc)
     {
-        //create missile ref
+        _hudController = hc;
     }
     public override void UsePowerup()
     {
-        Debug.Log("missile has been shot");
+        _hudController.HeldPowerup = -1;
     }
 }
