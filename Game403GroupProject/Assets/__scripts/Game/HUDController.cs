@@ -16,6 +16,8 @@ public class HUDController : MonoBehaviour
 
     private bool lapTimeShowing;
 
+    [Header("Game Controller Reference")]
+    [SerializeField]
     private GameController _gameController;
 
     public float Speed
@@ -134,7 +136,7 @@ public class HUDController : MonoBehaviour
 
     // HUD Element References
     [Header("Element References")]
-    public RectTransform currentArmorHUD;
+    public Image currentArmorHUD;
     public RectTransform speedometerNeedleHUD;
     public Text lapText;
     public Text raceTimeText;
@@ -144,6 +146,9 @@ public class HUDController : MonoBehaviour
     //
     public Text item_text;
     //
+
+    public Text wrongWayText;
+
 
     [Space(10)]
     [Header("Speedometer Needle")]
@@ -157,7 +162,7 @@ public class HUDController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _gameController = GameObject.FindObjectOfType<GameController>();
+        //_gameController = GameObject.FindObjectOfType<GameController>();
         // Defaults
         lapTimeShowing = false;
         heldPowerup = -1;
@@ -192,7 +197,7 @@ public class HUDController : MonoBehaviour
         float raceTimeSeconds = raceTime % 60;
 
         // Update HUD elements
-        currentArmorHUD.localScale = new Vector3(currentArmor / maxArmor, 1.0f, 1.0f);
+        currentArmorHUD.fillAmount = (currentArmor / maxArmor);
         lapText.text = currentLap.ToString() + " / " + totalLaps.ToString();
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
@@ -240,6 +245,27 @@ public class HUDController : MonoBehaviour
     public void hideLapTime()
     {
         lapTimeText.enabled = false;
+    }
+
+    public IEnumerator showWrongWay(bool isWrongWay)
+    {
+        isWrongWay = false;
+
+        if(isWrongWay == false)
+        {
+            wrongWayText.enabled = false;
+        }
+        else
+        {
+            wrongWayText.enabled = true;
+        }
+
+        // Display lap time
+        //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
+        //lapTimeText.enabled = true;
+
+        // Wait for the specified time before hiding again
+        yield return new WaitForSeconds(timeToDisplay);
     }
 
     // Convert an integer into an ordinal number
