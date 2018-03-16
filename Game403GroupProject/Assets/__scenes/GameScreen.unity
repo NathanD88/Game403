@@ -3576,6 +3576,7 @@ Prefab:
       propertyPath: m_AnchorMin.y
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 224214708836682172, guid: 663a96381a2b7a644b72b2b8be442377,
         type: 2}
       propertyPath: m_AnchorMax.y
@@ -3631,11 +3632,13 @@ Prefab:
       propertyPath: wrongWayText
       value: 
       objectReference: {fileID: 1638906947}
+=======
     - target: {fileID: 114160609570952182, guid: 663a96381a2b7a644b72b2b8be442377,
         type: 2}
       propertyPath: _gameController
       value: 
       objectReference: {fileID: 658250130}
+>>>>>>> 0847ebd45c9d18b029fa3f61385a0163e9d424fc
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 663a96381a2b7a644b72b2b8be442377, type: 2}
   m_IsPrefabParent: 0
