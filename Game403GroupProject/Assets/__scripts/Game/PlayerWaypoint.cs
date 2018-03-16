@@ -24,7 +24,7 @@ public class PlayerWaypoint : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
         direction = Vector3.zero;
         Vector3 wayPointPosition = playerWaypoints[counter].transform.position;
@@ -47,8 +47,6 @@ public class PlayerWaypoint : MonoBehaviour {
                 counter = 0;
             }
         }
-        //direction = direction.normalized;
-        //Vector3 dir = direction;
     }
 }
 
