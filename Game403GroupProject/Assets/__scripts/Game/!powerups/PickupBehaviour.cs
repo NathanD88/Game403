@@ -8,10 +8,9 @@ public class PickupBehaviour : MonoBehaviour {
     {
         if(other.CompareTag("Car"))
         {
-            Debug.Log(other.gameObject);
             GameObject targetPlayer = other.transform.parent.gameObject;
             GameObject.FindObjectOfType<GameController>().GenerateRandomPowerup(targetPlayer);
-            Destroy(this.gameObject);
+            StartCoroutine(DisablePickup(5));
         }
     }
     // Use this for initialization
@@ -23,4 +22,16 @@ public class PickupBehaviour : MonoBehaviour {
 	void FixedUpdate () {
         transform.Rotate(Vector3.up * 10 * Time.deltaTime, Space.World);
 	}
+
+    private IEnumerator DisablePickup(float delay)
+    {
+        Renderer rend = GetComponent<MeshRenderer>();
+        rend.enabled = false;
+        Collider col = GetComponent<BoxCollider>();
+        col.enabled = false;
+        yield return new WaitForSeconds(5);
+
+        rend.enabled = true;
+        col.enabled = true;
+    }
 }
