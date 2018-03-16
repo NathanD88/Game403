@@ -41,7 +41,18 @@ public class UIManager : MonoBehaviour {
     //Functions go here
     private GameObject GetObject(string uiName)
     {
-        GameObject obj = GameObject.Find("Canvas").transform.Find(uiName).gameObject;
+        GameObject obj = null;
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas)
+        {
+            Debug.Log("in here " + uiName);
+            Transform test = canvas.transform.Find(uiName);
+            if (test != null)
+            {
+                Debug.Log("in here 2 " + uiName);
+                obj = test.gameObject;
+            }
+        }
         return obj;
     }
     public void ShowUIContent(string name)
@@ -56,6 +67,16 @@ public class UIManager : MonoBehaviour {
             obj.SetActive(false);
         }
     }
+    public void ShowUIContent(GameObject obj)
+    {
+        if (!obj.activeSelf)
+        {
+            obj.SetActive(true);
+        }
+        else
+        {
+            obj.SetActive(false);
+        }
+    }
 
-    
 }
