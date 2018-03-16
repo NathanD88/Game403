@@ -18,7 +18,7 @@ public class OffRoadSlowdown : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlayerCar")
         {
-            other.GetComponent<VehicleAssist>().offroad = true;
+            //other.GetComponent<VehicleAssist>().offroad = true;
             Debug.Log("Off the Road");
         }
     }
@@ -26,7 +26,7 @@ public class OffRoadSlowdown : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlayerCar")
         {
-            other.GetComponent<"VehicleAssist">().offroad = false;
+            //other.GetComponent<"VehicleAssist">().offroad = false;
             Debug.Log("back On Track");
         }
     }
