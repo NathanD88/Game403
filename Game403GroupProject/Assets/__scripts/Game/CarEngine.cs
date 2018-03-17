@@ -14,8 +14,10 @@ public class CarEngine : MonoBehaviour {
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
     private Rigidbody rb;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         rb = GetComponent<Rigidbody>();
         Transform[] pointTransform = path.GetComponentsInChildren<Transform>();
         points = new List<Transform>();
@@ -29,7 +31,8 @@ public class CarEngine : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate ()
+    {
         if (start)
         {
             ApplySteer();
@@ -55,11 +58,13 @@ public class CarEngine : MonoBehaviour {
             }
         }
     }
+
     private void Drive()
     {
         wheelFL.motorTorque = 150;
         wheelFR.motorTorque = 150;
     }
+
     private void ApplySteer()
     {
         Vector3 relativeVector = transform.InverseTransformPoint(points[currentPoint].position);
@@ -78,6 +83,7 @@ public class CarEngine : MonoBehaviour {
         wheelFL.motorTorque = -120;
         wheelFR.motorTorque = -120;
     }
+
     public void StartGame(bool b)
     {
         start = b;
