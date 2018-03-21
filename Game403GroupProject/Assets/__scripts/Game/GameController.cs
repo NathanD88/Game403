@@ -21,36 +21,7 @@ public class GameController : MonoBehaviour
     private float startTime = 0f;
     private bool isGameStarted = false;
 
-    /*public void GenerateRandomPowerup(GameObject player)
-    {
-        int random_powerup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
-        Powerup currentpowerup;
-        switch(random_powerup)
-        {
-            case 0:
-                currentpowerup = new RepairKit(hudController);
-                break;
-            case 1:
-                currentpowerup = new Boost(hudController);
-                break;
-            case 2:
-                currentpowerup = new Missile(hudController);
-                break;
-            case 3:
-                currentpowerup = new OilSlick(hudController);
-                break;
-            default:
-                currentpowerup = null;
-                break;
-        }
-        player.GetComponent<Car>().SetPowerup(currentpowerup);
-        FindObjectOfType<HUDController>().HeldPowerup = random_powerup;
-<<<<<<< HEAD
-    }*/
-=======
-    }
-
->>>>>>> master
+    
 	// Use this for initialization
 	void Start ()
     {

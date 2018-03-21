@@ -308,11 +308,8 @@
     <Compile Include="Assets\__scripts\Game\Path.cs" />
     <Compile Include="Assets\__scripts\Game\PlayerPath.cs" />
     <Compile Include="Assets\__scripts\Game\PlayerWaypoint.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\__scripts\Game\PowerupManager.cs" />
-=======
     <Compile Include="Assets\__scripts\Game\PositionTracker.cs" />
->>>>>>> master
+    <Compile Include="Assets\__scripts\Game\PowerupManager.cs" />
     <Compile Include="Assets\__scripts\Game\WayPoint.cs" />
     <Compile Include="Assets\__scripts\LoadScene.cs" />
     <Compile Include="Assets\__scripts\MainMenu\MainMenu.cs" />
