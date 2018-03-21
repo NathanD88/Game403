@@ -9,7 +9,7 @@ public class Car : MonoBehaviour
     public int currentLap = 0;
     public float distance = 0;
     public int nextWaypoint = 0;
-    public float armor = 100;
+    public float armor = 0;
     public float maxArmor = 100;
 
     public enum CAR_TYPE {Muscle, Sport, Tuner };
@@ -22,7 +22,7 @@ public class Car : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //powerup = new RepairKit();
+        //powerup = new RepairKit(FindObjectOfType<HUDController>());
         rb = GetComponent<Rigidbody>();
         //SetCarStats();
 	}
@@ -32,14 +32,14 @@ public class Car : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && powerup != null)
         {
-            powerup.UsePowerup();
+            powerup.UsePowerup(this);
         }
         else if(Input.GetKeyDown(KeyCode.Space) && powerup == null)
         {
             Debug.Log("Sorry, no power to use :(");
         }
 
-        Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
+        //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
     }
 
     public void SetPowerup(Powerup p)

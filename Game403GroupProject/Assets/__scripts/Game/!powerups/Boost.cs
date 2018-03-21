@@ -10,7 +10,7 @@ public class Boost : Powerup {
     {
         _hudController = hc;
     }
-    public override void UsePowerup()
+    public override void UsePowerup(Car c)
     {
         _hudController.HeldPowerup = -1;
     }

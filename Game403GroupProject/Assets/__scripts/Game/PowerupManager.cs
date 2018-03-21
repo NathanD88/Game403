@@ -43,41 +43,6 @@ public class PowerupManager : MonoBehaviour {
             StartCoroutine(GeneratePickup());
         }
     }
-    /*
-    private void GeneratePickup()
-    {
-        int rand_pickup;
-        if (Time.time < endTime)
-        {
-            rand_pickup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
-            _hudcontroller.HeldPowerup = rand_pickup;
-            GeneratePickup();
-        }
-        rand_pickup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
-        Powerup currentpowerup;
-        switch (rand_pickup)
-        {
-            case 0:
-                currentpowerup = new RepairKit(_hudcontroller);
-                break;
-            case 1:
-                currentpowerup = new Boost(_hudcontroller);
-                break;
-            case 2:
-                currentpowerup = new Missile(_hudcontroller);
-                break;
-            case 3:
-                currentpowerup = new OilSlick(_hudcontroller);
-                break;
-            default:
-                currentpowerup = null;
-                break;
-        }
-        player.GetComponent<Car>().SetPowerup(currentpowerup);
-        _hudcontroller.HeldPowerup = rand_pickup;
-        player = null;
-        generating = false;
-    }*/
     
     private IEnumerator GeneratePickup()
     {

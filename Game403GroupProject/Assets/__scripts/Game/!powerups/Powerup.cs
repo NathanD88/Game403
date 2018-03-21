@@ -18,7 +18,7 @@ public class Powerup  {
     public PowerupType m_powerup;
     
     //duration, description, spawn rate
-    public virtual void UsePowerup()
+    public virtual void UsePowerup(Car c)
     {
 
     }
