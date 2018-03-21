@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car : MonoBehaviour {
+public class Car : MonoBehaviour
+{
     public Powerup powerup = null;
+    public int position;
+    public int currentLap = 0;
+    public float distance = 0;
+    public int nextWaypoint = 0;
+    public float armor = 100;
+    public float maxArmor = 100;
 
     public enum CAR_TYPE {Muscle, Sport, Tuner };
     public CAR_TYPE m_type;
@@ -13,14 +20,16 @@ public class Car : MonoBehaviour {
     private Rigidbody rb;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         //powerup = new RepairKit();
         rb = GetComponent<Rigidbody>();
         //SetCarStats();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && powerup != null)
         {
             powerup.UsePowerup();
@@ -29,6 +38,8 @@ public class Car : MonoBehaviour {
         {
             Debug.Log("Sorry, no power to use :(");
         }
+
+        Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
     }
 
     public void SetPowerup(Powerup p)
@@ -53,4 +64,20 @@ public class Car : MonoBehaviour {
                 break;
         }
     }
+
+    public void TakeDamage(float damage)
+    {
+        armor = (armor - damage < 0) ? 0 : armor - damage;
+    }
+
+    public void RestoreArmor(float restore)
+    {
+        armor = (armor + restore > maxArmor) ? maxArmor : armor + restore;
+    }
+
+    public void SetMaxArmor(float newArmor)
+    {
+        maxArmor = newArmor;
+    }
+
 }
