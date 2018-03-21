@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
     private float startTime = 0f;
     private bool isGameStarted = false;
 
-    public void GenerateRandomPowerup(GameObject player)
+    /*public void GenerateRandomPowerup(GameObject player)
     {
         int random_powerup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
         Powerup currentpowerup;
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour {
         }
         player.GetComponent<Car>().SetPowerup(currentpowerup);
         FindObjectOfType<HUDController>().HeldPowerup = random_powerup;
-    }
+    }*/
 	// Use this for initialization
 	void Start () {
         

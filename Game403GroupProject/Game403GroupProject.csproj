@@ -296,6 +296,7 @@
     <Compile Include="Assets\__scripts\Game\!powerups\Missile.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\OilSlick.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\PickupBehaviour.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\PickupManager.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\Powerup.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\RepairKit.cs" />
     <Compile Include="Assets\__scripts\Game\!temp_scripts\CarMovement.cs" />

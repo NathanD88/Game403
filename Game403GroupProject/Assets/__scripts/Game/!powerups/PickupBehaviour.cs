@@ -9,7 +9,7 @@ public class PickupBehaviour : MonoBehaviour {
         if(other.CompareTag("Car"))
         {
             GameObject targetPlayer = other.transform.parent.gameObject;
-            GameObject.FindObjectOfType<GameController>().GenerateRandomPowerup(targetPlayer);
+            GameObject.FindObjectOfType<PowerupManager>().RandomPickupPlayer(targetPlayer);
             StartCoroutine(DisablePickup(5));
         }
     }
