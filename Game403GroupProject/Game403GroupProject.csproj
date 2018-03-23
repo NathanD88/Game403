@@ -318,6 +318,7 @@
     <Compile Include="Assets\__scripts\Game\Path.cs" />
     <Compile Include="Assets\__scripts\Game\PlayerPath.cs" />
     <Compile Include="Assets\__scripts\Game\PlayerWaypoint.cs" />
+    <Compile Include="Assets\__scripts\Game\PositionTracker.cs" />
     <Compile Include="Assets\__scripts\Game\WayPoint.cs" />
     <Compile Include="Assets\__scripts\LoadScene.cs" />
     <Compile Include="Assets\__scripts\MainMenu\MainMenu.cs" />
