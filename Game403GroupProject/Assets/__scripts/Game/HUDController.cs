@@ -183,7 +183,6 @@ public class HUDController : MonoBehaviour
     void Update()
     {
         // Demo purposes ***
-        currentArmor = Mathf.Abs(Mathf.Sin(Time.time)) * 10.0f;
         speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
         //raceTime = Time.time;
         if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
@@ -198,7 +197,10 @@ public class HUDController : MonoBehaviour
 
         // Update HUD elements
         currentArmorHUD.fillAmount = (currentArmor / maxArmor);
-        lapText.text = currentLap.ToString() + " / " + totalLaps.ToString();
+
+        string lapString = (currentLap == 0) ? "1" : currentLap.ToString();
+        lapText.text = lapString + " / " + totalLaps.ToString();
+
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
         float needleZ = Mathf.Lerp(needleStartAngle, needleMaxAngle, speed / 200.0f);
