@@ -182,8 +182,6 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Demo purposes ***
-        speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
         //raceTime = Time.time;
         if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
         {

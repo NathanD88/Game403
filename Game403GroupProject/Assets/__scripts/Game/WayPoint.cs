@@ -37,12 +37,12 @@ public class WayPoint : MonoBehaviour
         }
 
 
-        RVP.FollowAI otherAI = other.GetComponentInParent<RVP.FollowAI>();
+        //RVP.FollowAI otherAI = other.GetComponentInParent<RVP.FollowAI>();
 
-        if (otherAI)
-        {
-            otherAI.target = GameObject.FindObjectOfType<PlayerWaypoint>().playerWaypoints[otherCar.nextWaypoint].transform;
-        }
+        //if (otherAI)
+        //{
+        //    otherAI.target = GameObject.FindObjectOfType<PlayerWaypoint>().playerWaypoints[otherCar.nextWaypoint].transform;
+        //}
 
     }
 
