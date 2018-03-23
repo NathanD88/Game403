@@ -2,8 +2,50 @@ fileFormatVersion: 2
 guid: b701be3094f3ba54bb698f800bdb7d4b
 timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
+    100000: Billy_Wheel1
+    100002: Billy_Wheel2
+    100004: Billy_Wheel3
+    100006: Billy_Wheel4
+    100008: Hillbilly
+    100010: //RootNode
+    100012: Vehicle
+    100014: Wheel1
+    100016: Wheel2
+    100018: Wheel3
+    100020: Wheel4
+    400000: Billy_Wheel1
+    400002: Billy_Wheel2
+    400004: Billy_Wheel3
+    400006: Billy_Wheel4
+    400008: Hillbilly
+    400010: //RootNode
+    400012: Vehicle
+    400014: Wheel1
+    400016: Wheel2
+    400018: Wheel3
+    400020: Wheel4
+    2300000: Billy_Wheel1
+    2300002: Billy_Wheel2
+    2300004: Billy_Wheel3
+    2300006: Billy_Wheel4
+    2300008: Hillbilly
+    2300010: Vehicle
+    2300012: Wheel1
+    2300014: Wheel2
+    2300016: Wheel3
+    2300018: Wheel4
+    3300000: Billy_Wheel1
+    3300002: Billy_Wheel2
+    3300004: Billy_Wheel3
+    3300006: Billy_Wheel4
+    3300008: Hillbilly
+    3300010: Vehicle
+    3300012: Wheel1
+    3300014: Wheel2
+    3300016: Wheel3
+    3300018: Wheel4
     4300000: Vehicle
     4300002: Wheel2
     4300004: Wheel3
@@ -14,10 +56,23 @@ ModelImporter:
     4300014: Billy_Wheel3
     4300016: Billy_Wheel1
     4300018: Billy_Wheel2
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hillbilly_Material
+    second: {fileID: 2100000, guid: d027c90f6ff9ef84383032fda1ec89c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vehicle_Material
+    second: {fileID: 2100000, guid: 1af71d154ebca2f428cc3fddd7597d1f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -30,6 +85,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -54,6 +110,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

@@ -22,6 +22,8 @@ namespace RVP
         bool targetIsWaypoint;
         VehicleWaypoint targetWaypoint;
 
+        Car thisCar;
+
         public float followDistance;
         bool close;
 
@@ -33,6 +35,7 @@ namespace RVP
         public float targetVelocity = -1;
         float speedLimit = 1;
         float brakeTime;
+
 
         [Tooltip("Mask for which objects can block the view of the target")]
         public LayerMask viewBlockMask;
@@ -63,6 +66,8 @@ namespace RVP
             rb = GetComponent<Rigidbody>();
             vp = GetComponent<VehicleParent>();
             va = GetComponent<VehicleAssist>();
+            thisCar = GetComponent<Car>();
+
             initialSpeed = speed;
 
             InitializeTarget();
@@ -89,6 +94,7 @@ namespace RVP
                     targetPoint = targetBody ? target.position + targetBody.velocity : target.position;
                 }
 
+                
                 if (targetIsWaypoint)
                 {
                     //if vehicle is close enough to target waypoint, switch to the next one
