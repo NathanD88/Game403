@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - Underside
+  - Pop Tire
+  - PlayerCar
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Ignore Wheel Cast
+  - Detachable Part
   - 
   - 
   - 
