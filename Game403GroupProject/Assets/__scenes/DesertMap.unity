@@ -37,7 +37,11 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
+<<<<<<< HEAD
+  m_Sun: {fileID: 0}
+=======
   m_Sun: {fileID: 2091770686}
+>>>>>>> master
   m_IndirectSpecularColor: {r: 0.7667974, g: 0.7470846, b: 0.6981752, a: 1}
 --- !u!157 &3
 LightmapSettings:
@@ -89,8 +93,12 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+<<<<<<< HEAD
+  m_LightingDataAsset: {fileID: 0}
+=======
   m_LightingDataAsset: {fileID: 112000002, guid: 4a262b3a73b2dab4f95d7a45e2d5e47b,
     type: 2}
+>>>>>>> master
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -123,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 11873864}
   - component: {fileID: 11873863}
-  - component: {fileID: 11873862}
   - component: {fileID: 11873861}
   m_Layer: 0
   m_Name: Quad2
@@ -166,6 +173,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &11873862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +189,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &11873863
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -197,8 +207,13 @@ Transform:
   m_LocalPosition: {x: -428.38504, y: 14.187376, z: 274.88824}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 1
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: -68.633, z: 0}
 --- !u!1 &46765128
 GameObject:
@@ -209,7 +224,6 @@ GameObject:
   m_Component:
   - component: {fileID: 46765132}
   - component: {fileID: 46765131}
-  - component: {fileID: 46765130}
   - component: {fileID: 46765129}
   m_Layer: 0
   m_Name: Quad9
@@ -252,6 +266,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &46765130
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -266,6 +282,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &46765131
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -283,8 +300,13 @@ Transform:
   m_LocalPosition: {x: -159.38504, y: 17.377375, z: 81.58823}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 8
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: -13.210001, z: 0}
 --- !u!4 &65199945 stripped
 Transform:
@@ -358,11 +380,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471010, guid: bdcebfa96c8bde040bb960321a9623e5, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 12
+=======
       value: 3
+>>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdcebfa96c8bde040bb960321a9623e5, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+=======
 --- !u!1001 &222385573
 Prefab:
   m_ObjectHideFlags: 0
@@ -469,6 +497,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3283a092188e0884890ce0766632257e, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> master
 --- !u!1 &235062198
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +580,6 @@ GameObject:
   m_Component:
   - component: {fileID: 278051496}
   - component: {fileID: 278051495}
-  - component: {fileID: 278051494}
   - component: {fileID: 278051493}
   m_Layer: 0
   m_Name: Quad7
@@ -594,6 +622,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &278051494
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -608,6 +638,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &278051495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -625,8 +656,13 @@ Transform:
   m_LocalPosition: {x: -130.06503, y: 17.377375, z: 173.41823}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 6
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 266.787, z: 0}
 --- !u!4 &287998618 stripped
 Transform:
@@ -788,7 +824,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 3
+=======
       value: 2
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_LocalScale.x
@@ -796,7 +836,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_LocalScale.z
@@ -911,7 +951,6 @@ GameObject:
   m_Component:
   - component: {fileID: 309982442}
   - component: {fileID: 309982441}
-  - component: {fileID: 309982440}
   - component: {fileID: 309982439}
   m_Layer: 0
   m_Name: Quad4
@@ -954,6 +993,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &309982440
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -968,6 +1009,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &309982441
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -985,8 +1027,13 @@ Transform:
   m_LocalPosition: {x: -347.01505, y: 17.377375, z: -68.37178}
   m_LocalScale: {x: 50.000015, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 3
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 161.026, z: 0}
 --- !u!1001 &314435259
 Prefab:
@@ -1025,7 +1072,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 4
+=======
       value: 0
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_Name
@@ -1114,6 +1165,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+=======
 --- !u!1001 &334339439
 Prefab:
   m_ObjectHideFlags: 0
@@ -1237,6 +1290,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2038051458b0cee4291c6aafd9e1df76, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> master
 --- !u!1 &349190635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1433,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 15
+=======
   m_RootOrder: 8
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398146455
 GameObject:
@@ -1390,7 +1448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 398146459}
   - component: {fileID: 398146458}
-  - component: {fileID: 398146457}
   - component: {fileID: 398146456}
   m_Layer: 0
   m_Name: Quad3
@@ -1433,6 +1490,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &398146457
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1447,6 +1506,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &398146458
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1464,8 +1524,13 @@ Transform:
   m_LocalPosition: {x: -391.37503, y: 17.377375, z: -63.881775}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 2
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 212.97299, z: 0}
 --- !u!1 &422946891
 GameObject:
@@ -1476,7 +1541,6 @@ GameObject:
   m_Component:
   - component: {fileID: 422946895}
   - component: {fileID: 422946894}
-  - component: {fileID: 422946893}
   - component: {fileID: 422946892}
   m_Layer: 0
   m_Name: Quad11
@@ -1519,6 +1583,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &422946893
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1533,6 +1599,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &422946894
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1550,8 +1617,13 @@ Transform:
   m_LocalPosition: {x: -0.17504883, y: 17.377375, z: -46.591778}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 10
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 97.394005, z: 0}
 --- !u!1 &504679911
 GameObject:
@@ -1663,7 +1735,6 @@ GameObject:
   m_Component:
   - component: {fileID: 609298841}
   - component: {fileID: 609298840}
-  - component: {fileID: 609298839}
   - component: {fileID: 609298838}
   m_Layer: 0
   m_Name: Quad8
@@ -1706,6 +1777,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &609298839
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1720,6 +1793,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &609298840
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1737,8 +1811,13 @@ Transform:
   m_LocalPosition: {x: -127.38504, y: 17.377375, z: 122.78822}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 7
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 283.715, z: 0}
 --- !u!1001 &782873374
 Prefab:
@@ -1777,7 +1856,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428504, guid: e33cb74b36f03154fbe8044f3d5a7842, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 11
+=======
       value: 2
+>>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e33cb74b36f03154fbe8044f3d5a7842, type: 2}
@@ -1824,8 +1907,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2046884087}
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+=======
   m_Father: {fileID: 1764631193}
   m_RootOrder: 6
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: -89.87701, z: 192.92899}
 --- !u!1 &821340260
 GameObject:
@@ -2017,7 +2105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1061781279}
   - component: {fileID: 1061781278}
-  - component: {fileID: 1061781277}
   - component: {fileID: 1061781276}
   m_Layer: 0
   m_Name: Quad5
@@ -2060,6 +2147,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &1061781277
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2074,6 +2163,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &1061781278
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2091,8 +2181,13 @@ Transform:
   m_LocalPosition: {x: -307.94504, y: 17.377375, z: -40.681778}
   m_LocalScale: {x: 50.000046, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 4
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 124.048004, z: 0}
 --- !u!1001 &1067673161
 Prefab:
@@ -2131,7 +2226,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 6
+=======
       value: 2
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_Name
@@ -2294,7 +2393,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 2
+=======
       value: 1
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_Name
@@ -2340,7 +2443,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 5
+=======
       value: 1
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 2300010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2429,7 +2536,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1133793641}
   - component: {fileID: 1133793640}
-  - component: {fileID: 1133793639}
   - component: {fileID: 1133793638}
   m_Layer: 0
   m_Name: Quad10
@@ -2472,6 +2578,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &1133793639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2486,6 +2594,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &1133793640
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2503,13 +2612,14 @@ Transform:
   m_LocalPosition: {x: -213.68504, y: 17.377375, z: -83.61178}
   m_LocalScale: {x: 50.00004, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 9
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 183.691, z: 0}
---- !u!4 &1145384276 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 460994, guid: 2038051458b0cee4291c6aafd9e1df76, type: 2}
-  m_PrefabInternal: {fileID: 345164326}
 --- !u!1001 &1193474205
 Prefab:
   m_ObjectHideFlags: 0
@@ -2547,7 +2657,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 9
+=======
       value: 5
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2749,7 +2863,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 1
+=======
       value: 0
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
       propertyPath: m_Name
@@ -2770,6 +2888,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2f2b3f1ea5914cd5b30f9cfdb5ac8b2, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+=======
 --- !u!1001 &1587012823
 Prefab:
   m_ObjectHideFlags: 0
@@ -3096,6 +3216,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592583907}
+>>>>>>> master
 --- !u!1001 &1616844855
 Prefab:
   m_ObjectHideFlags: 0
@@ -3133,12 +3254,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499516, guid: c2b8fc8bcbd9e414ca6d0e8d4e20add6, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 14
+=======
       value: 0
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 11410548, guid: c2b8fc8bcbd9e414ca6d0e8d4e20add6, type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1145384276}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b8fc8bcbd9e414ca6d0e8d4e20add6, type: 2}
   m_IsPrefabParent: 0
@@ -3272,7 +3397,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 8
+=======
       value: 4
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
       propertyPath: m_Name
@@ -3382,11 +3511,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 460.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31
+=======
       value: 20.724945
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.307375
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3410,7 +3547,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 7
+=======
       value: 3
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 2300010, guid: 9bbb38583e205a441b1d543e01ae49c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3619,7 +3760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1902960302}
   - component: {fileID: 1902960301}
-  - component: {fileID: 1902960300}
   - component: {fileID: 1902960299}
   m_Layer: 0
   m_Name: Quad6
@@ -3662,6 +3802,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &1902960300
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3676,6 +3818,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &1902960301
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3693,8 +3836,13 @@ Transform:
   m_LocalPosition: {x: -291.48505, y: 17.377375, z: 217.38823}
   m_LocalScale: {x: 50.00003, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 5
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 165.49101, z: 0}
 --- !u!1 &1945593075
 GameObject:
@@ -3778,7 +3926,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1961896178}
   - component: {fileID: 1961896177}
-  - component: {fileID: 1961896176}
   - component: {fileID: 1961896175}
   m_Layer: 0
   m_Name: Quad
@@ -3821,6 +3968,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+=======
 --- !u!64 &1961896176
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3835,6 +3984,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> master
 --- !u!33 &1961896177
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3852,8 +4002,13 @@ Transform:
   m_LocalPosition: {x: -20.815033, y: 14.187376, z: 348.38824}
   m_LocalScale: {x: 50, y: 15, z: 1}
   m_Children: []
+<<<<<<< HEAD
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+=======
   m_Father: {fileID: 1120692994}
   m_RootOrder: 0
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 0, y: 17.796001, z: 0}
 --- !u!1 &1964406223
 GameObject:
@@ -4142,7 +4297,11 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+<<<<<<< HEAD
+  m_Intensity: 0.7
+=======
   m_Intensity: 0.6
+>>>>>>> master
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -4163,7 +4322,11 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
+<<<<<<< HEAD
+  m_BounceIntensity: 1
+=======
   m_BounceIntensity: 2
+>>>>>>> master
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -4179,5 +4342,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 13
+=======
   m_RootOrder: 7
+>>>>>>> master
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
