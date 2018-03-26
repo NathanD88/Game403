@@ -39,7 +39,7 @@ public class Car : MonoBehaviour
             Debug.Log("Sorry, no power to use :(");
         }
 
-        Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
+        //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
     }
 
     public void SetPowerup(Powerup p)
