@@ -45,6 +45,11 @@ public class PositionTracker : MonoBehaviour
 
             // Calculate the total distance taking into account laps and waypoints and the fractional distance
             car.distance = car.currentLap * 100 + previousWaypoint * 10 + fractionalDistance;
+
+            Vector3 directionFromPreviousWaypoint = distanceBetweenLastandNextWaypoint.normalized;
+            Vector3 positionOnTrack = waypoints[previousWaypoint].transform.position;
+            car.resetPosition = positionOnTrack;
+            car.resetView = Quaternion.Euler(directionFromPreviousWaypoint);
         }
 
         // Sort the list of cars by their distance
