@@ -23,7 +23,7 @@ public class TornadoLogic : MonoBehaviour {
         {
             for (int i = 0; i < tornadoCount; i ++)
             {
-                Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, Random.Range(-spawnValues.z, spawnValues.z));
+                Vector3 spawnPosition = new Vector3 (Random.Range(transform.position.x -spawnValues.x, transform.position.x + spawnValues.x), spawnValues.y, Random.Range(transform.position.z -spawnValues.z, transform.position.z +spawnValues.z));
                 Quaternion spawnRotation = new Quaternion();
                 Instantiate(tornado, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
