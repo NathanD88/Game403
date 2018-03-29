@@ -291,6 +291,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\__scripts\DestroyByTime.cs" />
     <Compile Include="Assets\__scripts\EnergyShield\Shielding.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\Boost.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\Missile.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Assets\__scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\__scripts\MainMenu\RotatePlatform.cs" />
     <Compile Include="Assets\__scripts\SoundManager.cs" />
+    <Compile Include="Assets\__scripts\TornadoLogic.cs" />
     <Compile Include="Assets\__scripts\UIManager.cs" />
     <Compile Include="Assets\OutOfBounds.cs" />
     <Compile Include="Assets\PRefabe\Scripts\AI\FollowAI.cs" />
