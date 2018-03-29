@@ -49,7 +49,7 @@ public class PositionTracker : MonoBehaviour
             Vector3 directionFromPreviousWaypoint = distanceBetweenLastandNextWaypoint.normalized;
             Vector3 positionOnTrack = waypoints[previousWaypoint].transform.position;
             car.resetPosition = positionOnTrack;
-            car.resetView = Quaternion.Euler(directionFromPreviousWaypoint);
+            car.resetView = waypoints[previousWaypoint].transform.rotation;
         }
 
         // Sort the list of cars by their distance

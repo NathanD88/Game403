@@ -19,13 +19,13 @@ public class OutOfBounds : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Car thisCar;
-        if (thisCar = other.GetComponentInParent<Car>())
+        if (other.CompareTag("PlayerCar") && (thisCar = other.GetComponentInParent<Car>()))
         {
             thisCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
             thisCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            thisCar.transform.rotation = Quaternion.Euler(Vector3.zero);
+            thisCar.transform.rotation = thisCar.resetView;
             thisCar.transform.position = thisCar.resetPosition;
-            thisCar.GetComponent<Rigidbody>().rotation = thisCar.resetView;
+            //thisCar.GetComponent<Rigidbody>().rotation = thisCar.resetView;
             
         }
     }

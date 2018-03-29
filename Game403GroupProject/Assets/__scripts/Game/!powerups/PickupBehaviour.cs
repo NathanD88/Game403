@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupBehaviour : MonoBehaviour {
-
+public class PickupBehaviour : MonoBehaviour
+{
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Car"))
+        if(other.CompareTag("PlayerCar"))
         {
             Debug.Log(other.gameObject);
-            GameObject targetPlayer = other.transform.parent.gameObject;
+            GameObject targetPlayer = other.gameObject;
             GameObject.FindObjectOfType<GameController>().GenerateRandomPowerup(targetPlayer);
             Destroy(this.gameObject);
         }
@@ -20,7 +20,8 @@ public class PickupBehaviour : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate ()
+    {
         transform.Rotate(Vector3.up * 10 * Time.deltaTime, Space.World);
 	}
 }
