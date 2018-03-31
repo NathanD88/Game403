@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarSelectCamera : MonoBehaviour {
 
+	public Transform target;
+
 	public float moveCam;
 
 	public float smooth;
