@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/WorldSpace/Transitions/Scenes/FadeInOut.unity
-  isLoaded: 1
-  isActive: 1
