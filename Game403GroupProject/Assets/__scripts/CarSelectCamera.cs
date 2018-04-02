@@ -12,7 +12,7 @@ public class CarSelectCamera : MonoBehaviour {
 		
 		if (Input.GetButtonDown("CamMove"))
 		{
-			transform.position = Vector3.Lerp (transform.position, target.position, Time.deltaTime * smooth);
+			//transform.position = Vector3.Lerp (transform.position, target.position, Time.deltaTime * smooth);
 		}
 			
 	}
