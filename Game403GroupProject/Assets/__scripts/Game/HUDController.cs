@@ -168,10 +168,10 @@ public class HUDController : MonoBehaviour
         position = 1;
 
         // Ensures that the number of powerup images matches the length of the powerups enum
-        if ((int)GameController.powerups.POWERUP_COUNT != powerups.Length)
+		/*if ((int)GameController.powerup.POWERUP_COUNT != powerups.Length)
         {
             Debug.LogError("powerups enum from GameController script does not match number of powerup images in HUDController script!");
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -200,7 +200,7 @@ public class HUDController : MonoBehaviour
         speedometerNeedleHUD.transform.eulerAngles = new Vector3(1.0f, 1.0f, needleZ);
 
         // Update held item image
-        if (heldPowerup < -1 || heldPowerup > (int)GameController.powerups.POWERUP_COUNT)
+       /* if (heldPowerup < -1 || heldPowerup > (int)GameController.powerups.POWERUP_COUNT)
         {
             heldPowerup = -1;
             Debug.LogWarning("Attempted to allocate a powerup outside of the range.");
@@ -212,7 +212,7 @@ public class HUDController : MonoBehaviour
         else
         {
             heldItemHUD.sprite = powerups[heldPowerup];
-        }
+        }*/
 	}
 
     // Display the lap time for a specified number of seconds
@@ -242,10 +242,9 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
-<<<<<<< HEAD
+
 //HEAD
-    public IEnumerator showWrongWay(bool isWrongWay)
-=======
+
     /*public IEnumerator showWrongWay(bool isWrongWay)
 >>>>>>> master
     {
@@ -292,7 +291,7 @@ public class HUDController : MonoBehaviour
 =======
         yield return new WaitForSeconds(timeToDisplay);
     }*/
->>>>>>> master
+
 
 
     // Convert an integer into an ordinal number

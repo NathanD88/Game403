@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     // Array of all the car gameobjects
     GameObject[] allCars;
 
+
+
     public GameObject pauseMenu;
     public GameObject cd_text;
     
