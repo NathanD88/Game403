@@ -292,8 +292,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\__scripts\EnergyShield\Shielding.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\Bomb.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\BombBehavior.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\Boost.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\Missile.cs" />
+    <Compile Include="Assets\__scripts\Game\!powerups\MissileBehavior.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\OilSlick.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\PickupBehaviour.cs" />
     <Compile Include="Assets\__scripts\Game\!powerups\PickupManager.cs" />

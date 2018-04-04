@@ -6,6 +6,12 @@ public class PowerupManager : MonoBehaviour {
     public GameObject pickup_prefab;
     private Transform[] allSpawns;
 
+    //missile prefab
+    public GameObject Missilepf;
+
+    //bomb prefab
+    public GameObject Bombpf;
+
     //random pickup vars
     private bool generating = false;
     private float endTime = 0.0f;
@@ -13,6 +19,7 @@ public class PowerupManager : MonoBehaviour {
     private GameObject player = null;
     int last = -1;
     int rand_pickup = -1;
+
     // Use this for initialization
     void Start () {
         _hudcontroller = FindObjectOfType<HUDController>();
@@ -34,12 +41,11 @@ public class PowerupManager : MonoBehaviour {
 
     public void RandomPickupPlayer(GameObject targetPlayer)
     {
-        if (!generating)
+        if (!generating && targetPlayer.GetComponent<Car>().powerup == null)
         {
             player = targetPlayer;
             generating = true;
             endTime = Time.time + 5f;
-            //GeneratePickup();
             StartCoroutine(GeneratePickup());
         }
     }
@@ -94,7 +100,7 @@ public class PowerupManager : MonoBehaviour {
                     currentpowerup = new Missile(_hudcontroller);
                     break;
                 case 3:
-                    currentpowerup = new OilSlick(_hudcontroller);
+                    currentpowerup = new Bomb(_hudcontroller);
                     break;
                 default:
                     currentpowerup = null;
@@ -105,5 +111,17 @@ public class PowerupManager : MonoBehaviour {
             player = null;
             generating = false;
         }
+    }
+    
+    public void SpawnMissile(GameObject player)
+    {
+        Transform spawnLoc = player.GetComponent<Car>().MissileSpawn;
+        Instantiate(Missilepf, spawnLoc.position, spawnLoc.rotation);
+    }
+
+    public void DropBomb(GameObject player)
+    {
+        Transform bspawn = player.GetComponent<Car>().BombSpawn;
+        Instantiate(Bombpf, bspawn.position, Quaternion.identity);
     }
 }

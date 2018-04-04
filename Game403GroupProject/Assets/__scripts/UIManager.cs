@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     
@@ -79,4 +80,17 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    public Image FindImageInScene(string iName)
+    {
+        GameObject canv = GameObject.Find("Canvas");
+        Image[] images = canv.GetComponentsInChildren<Image>();
+        foreach(Image i in images)
+        {
+            if(i.gameObject.name == iName)
+            {
+                return i;
+            }
+        }
+        return null;
+    }
 }

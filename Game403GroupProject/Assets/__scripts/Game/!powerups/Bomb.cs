@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepairKit : Powerup {
+public class Bomb : Powerup {
 
     private HUDController _hudController;
 
-	public RepairKit(HUDController hc)
+    public Bomb(HUDController hc)
     {
         _hudController = hc;
     }
-
     public override void UsePowerup(Car c)
     {
-        c.RestoreArmor(100);
-        _hudController.HeldPowerup = -1;
+        GameObject player = c.gameObject;
+        GameObject.FindObjectOfType<PowerupManager>().DropBomb(player);
         c.powerup = null;
+        _hudController.HeldPowerup = -1;
     }
 }

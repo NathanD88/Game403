@@ -63,11 +63,14 @@ public class LoadScene : MonoBehaviour {
     }
     private IEnumerator LoadNextSceneAsync(string nextScene)
     {
+        //SceneManager.LoadScene("LoadingScreen");
+        Debug.Log("After load scene: loading screen");
         float finishtime = Time.time + 5f;
         // wating 1 sec to look good
-        yield return new WaitForSeconds(1f);
-
-        Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
+        //yield return new WaitForSeconds(1f);
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
+        Image loadingBar = UIManager.Instance.FindImageInScene("barOverlap");
         loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
         float endTime = Time.time + 5f;
         AsyncOperation async_op = SceneManager.LoadSceneAsync(nextScene);
@@ -83,6 +86,7 @@ public class LoadScene : MonoBehaviour {
 
         while(!done)
         {
+            Debug.Log("inside the while loop");
             yield return new WaitForSeconds(0.1f);
             float progress = Time.time / endTime;
             if (Time.time >= endTime)
@@ -97,5 +101,6 @@ public class LoadScene : MonoBehaviour {
                 loadingBar.rectTransform.sizeDelta = new Vector2(width, 30);
             }
         }
+        Debug.Log("after the while loop");
     }
 }

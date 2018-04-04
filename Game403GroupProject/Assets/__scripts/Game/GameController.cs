@@ -26,7 +26,12 @@ public class GameController : MonoBehaviour
 	void Start ()
     {
         // Populate the cars array
-        allCars = GameObject.FindGameObjectsWithTag("Car");
+        allCars = GameObject.FindGameObjectsWithTag("PlayerCar");
+        foreach(GameObject g in allCars)
+        {
+            RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            bi.enabled = false;
+        }
 
         // Attach the HUDController
         hudController = GameObject.FindObjectOfType<HUDController>();
@@ -67,7 +72,7 @@ public class GameController : MonoBehaviour
     private IEnumerator StartCountdown()
     {
         hudController.DisableRaceTimeText();
-        int cnt = 5;
+        int cnt = 3;
         countDown.text = cnt.ToString();
         while(cnt > 0)
         {
@@ -86,13 +91,19 @@ public class GameController : MonoBehaviour
         hudController.RaceTime = Time.time - startTime;
         hudController.EnableRaceTimeText();
         
-        if (allCars.Length > 1)
+        /*if (allCars.Length > 1)
         {
             Debug.Log(allCars.Length);
             foreach (GameObject g in allCars)
             {
-                g.GetComponent<CarEngine>().StartGame(true);
+                RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+                bi.enabled = true;
             }
+        }*/
+        foreach (GameObject g in allCars)
+        {
+            RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            bi.enabled = true;
         }
         isGameStarted = true;
     }
