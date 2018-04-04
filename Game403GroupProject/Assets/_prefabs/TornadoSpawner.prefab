@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ce86b016c65dc498f2baeb61713b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tornado: {fileID: 1581894971214838, guid: c4428099fb08fa14ebc7aaf19c047536, type: 2}
+  tornado: {fileID: 1860217587266310, guid: c4428099fb08fa14ebc7aaf19c047536, type: 2}
   spawnValues: {x: 252.3, y: 0, z: 252.3}
-  tornadoCount: 10
+  tornadoCount: 4
   spawnWait: 0.5
   startWait: 1
   waveWait: 4
