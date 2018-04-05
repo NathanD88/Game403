@@ -143,12 +143,7 @@ public class HUDController : MonoBehaviour
     public Text lapTimeText;
     public Text positionText;
     public Image heldItemHUD;
-    //
-    public Text item_text;
-    //
-
     public Text wrongWayText;
-
 
     [Space(10)]
     [Header("Speedometer Needle")]
@@ -173,16 +168,17 @@ public class HUDController : MonoBehaviour
         position = 1;
 
         // Ensures that the number of powerup images matches the length of the powerups enum
-        if (Powerup.POWERUP_COUNT != powerups.Length)
+		/*if ((int)GameController.powerup.POWERUP_COUNT != powerups.Length)
         {
             Debug.LogError("powerups enum from GameController script does not match number of powerup images in HUDController script!");
-        }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
         // Demo purposes ***
+        currentArmor = Mathf.Abs(Mathf.Sin(Time.time)) * 10.0f;
         speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
         //raceTime = Time.time;
         if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
@@ -197,17 +193,14 @@ public class HUDController : MonoBehaviour
 
         // Update HUD elements
         currentArmorHUD.fillAmount = (currentArmor / maxArmor);
-
-        string lapString = (currentLap == 0) ? "1" : currentLap.ToString();
-        lapText.text = lapString + " / " + totalLaps.ToString();
-
+        lapText.text = currentLap.ToString() + " / " + totalLaps.ToString();
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
         float needleZ = Mathf.Lerp(needleStartAngle, needleMaxAngle, speed / 200.0f);
         speedometerNeedleHUD.transform.eulerAngles = new Vector3(1.0f, 1.0f, needleZ);
 
         // Update held item image
-        if (heldPowerup < -1 || heldPowerup > Powerup.POWERUP_COUNT)
+       /* if (heldPowerup < -1 || heldPowerup > (int)GameController.powerups.POWERUP_COUNT)
         {
             heldPowerup = -1;
             Debug.LogWarning("Attempted to allocate a powerup outside of the range.");
@@ -219,7 +212,7 @@ public class HUDController : MonoBehaviour
         else
         {
             heldItemHUD.sprite = powerups[heldPowerup];
-        }
+        }*/
 	}
 
     // Display the lap time for a specified number of seconds
@@ -249,8 +242,11 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
+
 //HEAD
-    public IEnumerator showWrongWay(bool isWrongWay)
+
+    /*public IEnumerator showWrongWay(bool isWrongWay)
+>>>>>>> master
     {
         isWrongWay = false;
 
@@ -268,6 +264,7 @@ public class HUDController : MonoBehaviour
         //lapTimeText.enabled = true;
 
         // Wait for the specified time before hiding again
+<<<<<<< HEAD
         yield return new WaitForSeconds(5);
     }
 
@@ -291,6 +288,10 @@ public class HUDController : MonoBehaviour
     //    // Wait for the specified time before hiding again
     //    yield return new WaitForSeconds(timeToDisplay);
     //}
+=======
+        yield return new WaitForSeconds(timeToDisplay);
+    }*/
+
 
 
     // Convert an integer into an ordinal number
