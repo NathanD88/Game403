@@ -60,7 +60,10 @@ public class GameController : MonoBehaviour
 
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
-	}
+
+        Debug.Log(PlayerPrefs.GetInt("SelectedCar"));
+
+    }
 	
 	// Update is called once per frame
 	void Update ()

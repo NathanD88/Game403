@@ -14,6 +14,8 @@ public class CarSelector : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        index = PlayerPrefs.GetInt("SelectedCar");
+
 		Models = new GameObject[transform.childCount];
 
 		//fill the array with models
@@ -29,10 +31,16 @@ public class CarSelector : MonoBehaviour {
 		}
 
 		//toggle the first index to be visible
-		if (Models[0]) 
+		if (Models[index]) 
 		{
-			Models[0].SetActive (true);
+			Models[index].SetActive (true);
 		}
+
+        if(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>() != null)
+        {
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>().target = Models[index].transform;
+        }
+
 
 	}
 
@@ -69,6 +77,6 @@ public class CarSelector : MonoBehaviour {
 	public void ConfirmCar()
 	{
 		PlayerPrefs.SetInt ("SelectedCar", index);
-		SceneManager.LoadScene ("DesertMap");
+		SceneManager.LoadScene ("LevelSelectScreen");
 	}
 }
