@@ -41,6 +41,7 @@ namespace RVP
             tr = transform;
             cam = GetComponent<Camera>();
             Initialize();
+
         }
 
         public void Initialize()

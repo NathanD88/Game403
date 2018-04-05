@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     // Array of all the car gameobjects
     GameObject[] allCars;
 
+
+
     public GameObject pauseMenu;
     public GameObject cd_text;
     
@@ -58,7 +60,10 @@ public class GameController : MonoBehaviour
 
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
-	}
+
+        Debug.Log(PlayerPrefs.GetInt("SelectedCar"));
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
