@@ -84,6 +84,7 @@ public class GameController : MonoBehaviour
         hudController.CurrentLap = playerCar.currentLap;
         hudController.CurrentArmor = playerCar.armor;
         hudController.MaxArmor = playerCar.maxArmor;
+        hudController.Speed = playerCar.GetComponentInParent<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
     }
 
     public void QuitButton()
