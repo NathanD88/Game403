@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -90,9 +91,15 @@ public class GameController : MonoBehaviour
         hudController.Speed = playerCar.GetComponentInParent<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
     }
 
+	public void ResumeButton()
+	{
+		Time.timeScale = 0f;
+	}
+
     public void QuitButton()
     {
-        LoadScene.Instance.LoadNextScene("StartScreen");
+        //LoadScene.Instance.LoadNextScene("StartScreen");
+		SceneManager.LoadScene("StartScreen");
     }
 
     private IEnumerator StartCountdown()
