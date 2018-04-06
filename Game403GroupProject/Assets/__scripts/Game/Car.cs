@@ -11,6 +11,8 @@ public class Car : MonoBehaviour
     public int nextWaypoint = 0;
     public float armor = 100;
     public float maxArmor = 100;
+    public Vector3 resetPosition;
+    public Quaternion resetView;
 
     public enum CAR_TYPE {Muscle, Sport, Tuner };
     public CAR_TYPE m_type;
