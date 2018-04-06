@@ -93,13 +93,15 @@ public class GameController : MonoBehaviour
 
 	public void ResumeButton()
 	{
-		Time.timeScale = 0f;
+		Time.timeScale = 1f;
+		pauseMenu.SetActive (false);
 	}
 
     public void QuitButton()
     {
         //LoadScene.Instance.LoadNextScene("StartScreen");
 		SceneManager.LoadScene("StartScreen");
+		Time.timeScale = 1f;
     }
 
     private IEnumerator StartCountdown()
