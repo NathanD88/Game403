@@ -65,31 +65,30 @@ public class LoadScene : MonoBehaviour {
     {
         //SceneManager.LoadScene("LoadingScreen");
         Debug.Log("After load scene: loading screen");
-        float finishtime = Time.time + 5f;
         // wating 1 sec to look good
         //yield return new WaitForSeconds(1f);
-        Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
-        Image loadingBar = UIManager.Instance.FindImageInScene("barOverlap");
-        loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
-        float endTime = Time.time + 5f;
+
         AsyncOperation async_op = SceneManager.LoadSceneAsync(nextScene);
         async_op.allowSceneActivation = false;
-        fTime = 0f;
-        Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
-        cScale = GameObject.Find("Canvas").GetComponent<CanvasScaler>();
-        //loadingBar.fillAmount = 0;
+
+        //debug only
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
+
+        Image loadingBar = UIManager.Instance.LoadingBar.GetComponent<Image>();
+        loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
         loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width - (Screen.width * async_op.progress), 30);
-        loadingText.text = (async_op.progress * 100).ToString() + "%";
 
         bool done = false;
 
         while(!done)
         {
             Debug.Log("inside the while loop");
+            float progress = async_op.progress;
+            Debug.Log(progress);
             yield return new WaitForSeconds(0.1f);
-            float progress = Time.time / endTime;
-            if (Time.time >= endTime)
+            
+            if (progress >=1f)
             {
                 progress = 0;
                 async_op.allowSceneActivation = true;

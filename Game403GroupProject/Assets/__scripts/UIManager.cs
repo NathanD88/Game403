@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
-    
+
+    public GameObject LoadingBar;
     public static UIManager Instance
     {
         get
