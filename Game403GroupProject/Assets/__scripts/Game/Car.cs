@@ -9,8 +9,13 @@ public class Car : MonoBehaviour
     public int currentLap = 0;
     public float distance = 0;
     public int nextWaypoint = 0;
-    public float armor = 100;
+    public float armor = 0;
     public float maxArmor = 100;
+
+    private bool BOOST = false;
+
+    public Transform MissileSpawn;
+    public Transform BombSpawn;
 
     public enum CAR_TYPE {Muscle, Sport, Tuner };
     public CAR_TYPE m_type;
@@ -22,7 +27,7 @@ public class Car : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //powerup = new RepairKit();
+        //powerup = new Boost(FindObjectOfType<HUDController>());
         rb = GetComponent<Rigidbody>();
         //SetCarStats();
 	}
@@ -30,16 +35,20 @@ public class Car : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && powerup != null)
+        if (Input.GetButton("Use Powerup") && powerup != null)
         {
-            powerup.UsePowerup();
+            powerup.UsePowerup(this);
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && powerup == null)
+        else if (Input.GetButton("Use Powerup") && powerup == null)
         {
             Debug.Log("Sorry, no power to use :(");
         }
 
-        //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
+        if(BOOST)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity *= 1.015f;
+        }
     }
 
     public void SetPowerup(Powerup p)
@@ -80,4 +89,23 @@ public class Car : MonoBehaviour
         maxArmor = newArmor;
     }
 
+    public void ActivateBoost(bool b)
+    {
+        BOOST = b;
+        if(b == true)
+        {
+            StartCoroutine(BoostDelay());
+        }
+        else
+        {
+            powerup = null;
+        }
+    }
+
+    private IEnumerator BoostDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        ActivateBoost(false);
+    }
 }
