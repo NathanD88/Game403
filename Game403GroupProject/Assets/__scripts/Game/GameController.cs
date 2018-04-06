@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     // Array of all the car gameobjects
     GameObject[] allCars;
 
+
+
     public GameObject pauseMenu;
     public GameObject cd_text;
     
@@ -38,7 +40,10 @@ public class GameController : MonoBehaviour
 
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
-	}
+
+        Debug.Log(PlayerPrefs.GetInt("SelectedCar"));
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -62,6 +67,7 @@ public class GameController : MonoBehaviour
         hudController.CurrentLap = playerCar.currentLap;
         hudController.CurrentArmor = playerCar.armor;
         hudController.MaxArmor = playerCar.maxArmor;
+        hudController.Speed = playerCar.GetComponentInParent<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
     }
 
     public void QuitButton()
