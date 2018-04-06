@@ -12,7 +12,8 @@ public class CarSelector : MonoBehaviour {
 	private int index;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 
         index = PlayerPrefs.GetInt("SelectedCar");
 
@@ -36,9 +37,22 @@ public class CarSelector : MonoBehaviour {
 			Models[index].SetActive (true);
 		}
 
-        if(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>() != null)
+        RVP.CameraControl camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>();
+        if (camControl != null)
         {
-            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>().target = Models[index].transform;
+            camControl.target = Models[index].transform;
+        }
+
+        GameController gc = GameObject.FindObjectOfType<GameController>();
+        if (gc != null)
+        {
+            gc.playerCar = Models[index].GetComponentInChildren<Car>();
+        }
+
+        PlayerWaypoint wp = GameObject.FindObjectOfType<PlayerWaypoint>();
+        if (wp != null)
+        {
+            wp.car = Models[index];
         }
 
 

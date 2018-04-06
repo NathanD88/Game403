@@ -14,8 +14,6 @@ public class GameController : MonoBehaviour
     // Array of all the car gameobjects
     GameObject[] allCars;
 
-
-
     public GameObject pauseMenu;
     public GameObject cd_text;
     
@@ -45,7 +43,7 @@ public class GameController : MonoBehaviour
                 currentpowerup = null;
                 break;
         }
-        player.GetComponent<Car>().SetPowerup(currentpowerup);
+        player.GetComponentInChildren<Car>().SetPowerup(currentpowerup);
         FindObjectOfType<HUDController>().HeldPowerup = random_powerup;
     }
 
@@ -87,7 +85,7 @@ public class GameController : MonoBehaviour
         hudController.CurrentLap = playerCar.currentLap;
         hudController.CurrentArmor = playerCar.armor;
         hudController.MaxArmor = playerCar.maxArmor;
-        hudController.Speed = playerCar.GetComponentInParent<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
+        hudController.Speed = playerCar.GetComponentInChildren<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
     }
 
     public void QuitButton()

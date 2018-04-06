@@ -54,6 +54,7 @@ namespace RVP
             }
 
             //Set variables based on target vehicle's properties
+
             if (target)
             {
                 vp = target.GetComponent<VehicleParent>();
@@ -66,7 +67,7 @@ namespace RVP
 
             //Set the audio listener update mode to fixed, because the camera moves in FixedUpdate
             //This is necessary for doppler effects to sound correct
-            GetComponent<AudioListener>().velocityUpdateMode = AudioVelocityUpdateMode.Fixed;
+            GetComponentInChildren<AudioListener>().velocityUpdateMode = AudioVelocityUpdateMode.Fixed;
         }
 
         void FixedUpdate()
