@@ -11,8 +11,10 @@ public class RepairKit : Powerup {
         _hudController = hc;
     }
 
-    public override void UsePowerup()
+    public override void UsePowerup(Car c)
     {
+        c.RestoreArmor(100);
         _hudController.HeldPowerup = -1;
+        c.powerup = null;
     }
 }

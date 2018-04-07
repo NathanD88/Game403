@@ -182,8 +182,6 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Demo purposes ***
-        speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
         //raceTime = Time.time;
         if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
         {
@@ -249,6 +247,28 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
+//HEAD
+    public IEnumerator showWrongWay(bool isWrongWay)
+    {
+        isWrongWay = false;
+
+        if(isWrongWay == false)
+        {
+            wrongWayText.enabled = false;
+        }
+        else
+        {
+            wrongWayText.enabled = true;
+        }
+
+        // Display lap time
+        //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
+        //lapTimeText.enabled = true;
+
+        // Wait for the specified time before hiding again
+        yield return new WaitForSeconds(5);
+    }
+
     //public IEnumerator showWrongWay(bool isWrongWay)
     //{
     //    isWrongWay = false;
@@ -269,6 +289,7 @@ public class HUDController : MonoBehaviour
     //    // Wait for the specified time before hiding again
     //    yield return new WaitForSeconds(timeToDisplay);
     //}
+
 
     // Convert an integer into an ordinal number
     private string intToOrdinal(int i)

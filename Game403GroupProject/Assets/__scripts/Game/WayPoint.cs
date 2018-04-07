@@ -11,9 +11,10 @@ public class WayPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponentInParent<Car>().CompareTag("PlayerCar"))
+        Car otherCar = other.GetComponentInParent<Car>();
+
+        if (other.GetComponentInParent<Car>().CompareTag("PlayerCar"))
         {
-            Car otherCar = other.GetComponentInParent<Car>();
 
             // If this is the start waypoint and the car's next waypoint is 0, increase lap
             if (waypointNumber == 0 && otherCar.nextWaypoint == 0)
@@ -30,6 +31,7 @@ public class WayPoint : MonoBehaviour
             // If the car's next waypoint is this waypoint, increment the next waypoint
             if (otherCar.nextWaypoint == waypointNumber)
             {
+<<<<<<< HEAD
                 otherCar.nextWaypoint++;
                 if (waypointNumber == totalWaypoints - 1)
                 {
@@ -40,11 +42,23 @@ public class WayPoint : MonoBehaviour
                 }
                 
                 activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
+=======
+                otherCar.nextWaypoint++;                
+>>>>>>> master
             }
 
 
             
         }
+
+
+        //RVP.FollowAI otherAI = other.GetComponentInParent<RVP.FollowAI>();
+
+        //if (otherAI)
+        //{
+        //    otherAI.target = GameObject.FindObjectOfType<PlayerWaypoint>().playerWaypoints[otherCar.nextWaypoint].transform;
+        //}
+
     }
 
     // Use this for initialization

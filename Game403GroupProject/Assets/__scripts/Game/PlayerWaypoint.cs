@@ -44,6 +44,10 @@ public class PlayerWaypoint : MonoBehaviour
             if(counter < playerWaypoints.Length-1)
             {
                 counter++;
+<<<<<<< HEAD
+=======
+                //Debug.Log("Go To Next Checkpoint");
+>>>>>>> master
             }
             else
             {
