@@ -31,7 +31,6 @@ public class WayPoint : MonoBehaviour
             // If the car's next waypoint is this waypoint, increment the next waypoint
             if (otherCar.nextWaypoint == waypointNumber)
             {
-<<<<<<< HEAD
                 otherCar.nextWaypoint++;
                 if (waypointNumber == totalWaypoints - 1)
                 {
@@ -42,9 +41,7 @@ public class WayPoint : MonoBehaviour
                 }
                 
                 activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
-=======
-                otherCar.nextWaypoint++;                
->>>>>>> master
+                otherCar.nextWaypoint++;
             }
 
 
