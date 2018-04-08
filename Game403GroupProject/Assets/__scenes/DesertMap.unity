@@ -984,8 +984,6 @@ MonoBehaviour:
   MissileSpawn: {fileID: 0}
   BombSpawn: {fileID: 0}
   m_type: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &297835004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointNumber: 2
->>>>>>> master
 --- !u!1001 &307279898
 Prefab:
   m_ObjectHideFlags: 0
@@ -1930,8 +1927,6 @@ Transform:
   m_Father: {fileID: 1120692994}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 97.394005, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &504679911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2024,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 504679911}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> master
 --- !u!4 &536569484 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
@@ -2120,7 +2114,6 @@ Transform:
   m_Father: {fileID: 1120692994}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 283.715, z: 0}
-<<<<<<< HEAD
 --- !u!1 &689610639 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1751277665585776, guid: e285723c32607c6458f286e8ffd30bcf,
@@ -2193,9 +2186,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 745790356}
 --- !u!1001 &782873374
-=======
 --- !u!1001 &655653687
->>>>>>> master
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3514,7 +3505,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
 --- !u!1001 &1260062713
 Prefab:
   m_ObjectHideFlags: 0
@@ -3591,7 +3581,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4181302924478928, guid: e285723c32607c6458f286e8ffd30bcf,
     type: 2}
   m_PrefabInternal: {fileID: 177904414}
-=======
 --- !u!1 &1282264592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,7 +3652,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282264592}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> master
 --- !u!1 &1375067364 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101268, guid: 2038051458b0cee4291c6aafd9e1df76, type: 2}
@@ -5126,11 +5114,9 @@ Transform:
   m_LocalScale: {x: 50.00003, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 1120692994}
-<<<<<<< HEAD
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 17.796001, z: 0}
 --- !u!1001 &2043264672
-=======
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 165.49101, z: 0}
 --- !u!1 &1932885293
@@ -5582,12 +5568,10 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a446810b4feee0342962f7375c74f6a0, type: 2}
   m_PrefabInternal: {fileID: 1991042084}
 --- !u!1001 &1996280355
->>>>>>> master
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-<<<<<<< HEAD
     m_TransformParent: {fileID: 1558113840}
     m_Modifications:
     - target: {fileID: 4181302924478928, guid: e285723c32607c6458f286e8ffd30bcf, type: 2}
@@ -5650,7 +5634,6 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 2043264672}
 --- !u!1 &2046884086
-=======
     m_TransformParent: {fileID: 1060505753}
     m_Modifications:
     - target: {fileID: 400000, guid: 99873984385fb5e439af19e5af9e632f, type: 2}
@@ -5893,7 +5876,6 @@ MeshFilter:
   m_GameObject: {fileID: 2060999876}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2065214239
->>>>>>> master
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
