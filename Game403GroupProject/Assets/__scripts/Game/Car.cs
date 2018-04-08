@@ -9,7 +9,7 @@ public class Car : MonoBehaviour
     public int currentLap = 0;
     public float distance = 0;
     public int nextWaypoint = 0;
-    public float armor = 0;
+    public float armor = 100;
     public float maxArmor = 100;
 
     private bool BOOST = false;

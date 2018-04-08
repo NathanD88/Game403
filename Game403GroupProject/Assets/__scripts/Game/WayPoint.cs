@@ -6,6 +6,7 @@ public class WayPoint : MonoBehaviour
 {
     // Set the waypoint number in the editor
     public int waypointNumber;
+
     PlayerWaypoint activeWaypoint;
     private int totalWaypoints;
 
@@ -32,30 +33,22 @@ public class WayPoint : MonoBehaviour
             if (otherCar.nextWaypoint == waypointNumber)
             {
                 otherCar.nextWaypoint++;
-                if (waypointNumber == totalWaypoints - 1)
+
+                if (!otherCar.GetComponentInParent<RVP.FollowAI>().isActiveAndEnabled)
                 {
-                    activeWaypoint.playerWaypoints[0].GetComponent<MeshRenderer>().enabled = true;
-                }else
-                {
-                    activeWaypoint.playerWaypoints[waypointNumber + 1].GetComponent<MeshRenderer>().enabled = true;
+                    if (waypointNumber == totalWaypoints - 1)
+                    {
+                        activeWaypoint.playerWaypoints[0].GetComponent<MeshRenderer>().enabled = true;
+                    }
+                    else
+                    {
+                        activeWaypoint.playerWaypoints[waypointNumber + 1].GetComponent<MeshRenderer>().enabled = true;
+                    }
+
+                    activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
                 }
-                
-                activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
-                otherCar.nextWaypoint++;
             }
-
-
-            
         }
-
-
-        //RVP.FollowAI otherAI = other.GetComponentInParent<RVP.FollowAI>();
-
-        //if (otherAI)
-        //{
-        //    otherAI.target = GameObject.FindObjectOfType<PlayerWaypoint>().playerWaypoints[otherCar.nextWaypoint].transform;
-        //}
-
     }
 
     // Use this for initialization
@@ -66,9 +59,4 @@ public class WayPoint : MonoBehaviour
 
         activeWaypoint = GameObject.FindObjectOfType<PlayerWaypoint>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
