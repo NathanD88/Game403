@@ -23,16 +23,22 @@ public class WayPoint : MonoBehaviour
                 otherCar.currentLap++;
             }
 
-            // If the nextwaypoint exceeds the total waypoints, set it back to 0
-            if (otherCar.nextWaypoint == totalWaypoints)
-            {
-                otherCar.nextWaypoint = 0;
-            }
+            //// If the nextwaypoint exceeds the total waypoints, set it back to 0
+            //if (otherCar.nextWaypoint == totalWaypoints)
+            //{
+            //    otherCar.nextWaypoint = 0;
+            //}
 
             // If the car's next waypoint is this waypoint, increment the next waypoint
             if (otherCar.nextWaypoint == waypointNumber)
             {
                 otherCar.nextWaypoint++;
+
+                // If the nextwaypoint exceeds the total waypoints, set it back to 0
+                if (otherCar.nextWaypoint == totalWaypoints)
+                {
+                    otherCar.nextWaypoint = 0;
+                }
 
                 if (!otherCar.GetComponentInParent<RVP.FollowAI>().isActiveAndEnabled)
                 {
