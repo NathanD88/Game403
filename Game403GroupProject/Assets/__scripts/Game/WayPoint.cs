@@ -23,12 +23,6 @@ public class WayPoint : MonoBehaviour
                 otherCar.currentLap++;
             }
 
-            //// If the nextwaypoint exceeds the total waypoints, set it back to 0
-            //if (otherCar.nextWaypoint == totalWaypoints)
-            //{
-            //    otherCar.nextWaypoint = 0;
-            //}
-
             // If the car's next waypoint is this waypoint, increment the next waypoint
             if (otherCar.nextWaypoint == waypointNumber)
             {
@@ -52,6 +46,10 @@ public class WayPoint : MonoBehaviour
                     }
 
                     activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
+
+                    otherCar.resetPosition = this.transform.position;
+                    otherCar.resetPosition.y = 31.6f;
+                    otherCar.resetView = this.transform.rotation;
                 }
             }
         }

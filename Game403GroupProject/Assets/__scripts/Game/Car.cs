@@ -11,6 +11,8 @@ public class Car : MonoBehaviour
     public int nextWaypoint = 0;
     public float armor = 100;
     public float maxArmor = 100;
+    public Vector3 resetPosition;
+    public Quaternion resetView;
 
     private bool BOOST = false;
 
@@ -29,6 +31,8 @@ public class Car : MonoBehaviour
     {
         //powerup = new Boost(FindObjectOfType<HUDController>());
         rb = GetComponent<Rigidbody>();
+        resetView = GetComponent<Rigidbody>().rotation;
+        resetPosition = GetComponent<Rigidbody>().transform.position;
         //SetCarStats();
 	}
 	

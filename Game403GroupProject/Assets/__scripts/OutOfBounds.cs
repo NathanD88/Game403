@@ -19,7 +19,7 @@ public class OutOfBounds : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Car thisCar;
-        if (other.CompareTag("PlayerCar") && (thisCar = other.GetComponentInParent<Car>()))
+        if (other.transform.parent.CompareTag("PlayerCar") && (thisCar = other.GetComponentInParent<Car>()))
         {
             thisCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
             thisCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
