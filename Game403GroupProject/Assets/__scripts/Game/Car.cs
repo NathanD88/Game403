@@ -44,11 +44,15 @@ public class Car : MonoBehaviour
             Debug.Log("Sorry, no power to use :(");
         }
 
+<<<<<<< HEAD
+        //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
+=======
         if(BOOST)
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.velocity *= 1.015f;
         }
+>>>>>>> master
     }
 
     public void SetPowerup(Powerup p)

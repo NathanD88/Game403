@@ -44,15 +44,16 @@ public class PlayerWaypoint : MonoBehaviour
             if(counter < playerWaypoints.Length-1)
             {
                 counter++;
+<<<<<<< HEAD
+=======
                 //Debug.Log("Go To Next Checkpoint");
+>>>>>>> master
             }
             else
             {
                 counter = 0;
             }
         }
-        //direction = direction.normalized;
-        //Vector3 dir = direction;
     }
 }
 
