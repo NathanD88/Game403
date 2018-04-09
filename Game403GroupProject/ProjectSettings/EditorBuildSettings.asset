@@ -20,3 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/__scenes/StartScreen.unity
     guid: 6c7d6d17ae5cf6d408457cbcf4307286
+  - enabled: 1
+    path: Assets/__scenes/CreditScreen.unity
+    guid: 2f3952e419e75eb45806b428a0574715
+  - enabled: 1
+    path: Assets/__scenes/MainMenu.unity
+    guid: f7f2a2bac4ba0ba439bb51d5dd80fa82
