@@ -322,6 +322,7 @@
     <Compile Include="Assets\__scripts\LoadSceneImages.cs" />
     <Compile Include="Assets\__scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\__scripts\MainMenu\RotatePlatform.cs" />
+    <Compile Include="Assets\__scripts\OutOfBounds.cs" />
     <Compile Include="Assets\__scripts\SoundManager.cs" />
     <Compile Include="Assets\__scripts\TornadoLogic.cs" />
     <Compile Include="Assets\__scripts\UIManager.cs" />
