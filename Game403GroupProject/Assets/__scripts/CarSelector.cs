@@ -35,7 +35,7 @@ public class CarSelector : MonoBehaviour {
 		{
 			Models[index].SetActive (true);
 		}
-        /*
+		/*
         if(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>() != null)
         {
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>().target = Models[index].transform;

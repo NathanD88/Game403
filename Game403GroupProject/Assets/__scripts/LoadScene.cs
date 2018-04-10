@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
-
+	/*
     private CanvasScaler cScale;
     private float fTime;
     private float screen_width;
@@ -51,44 +51,46 @@ public class LoadScene : MonoBehaviour {
     }
 
     //custom function go here
+*/
+	public void gameexit()
+	{
+		Application.Quit();
+	}
 
     public void LoadNextScene(string sName)
     {
-        if(Time.timeScale == 0f)
+        /*if(Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-        }
-        SceneManager.LoadScene("LoadingScreen");
-        StartCoroutine(LoadNextSceneAsync(sName));
+        }*/
+		SceneManager.LoadScene(sName);
+       // StartCoroutine(LoadNextSceneAsync(sName));
     }
-    private IEnumerator LoadNextSceneAsync(string nextScene)
+  /*  private IEnumerator LoadNextSceneAsync(string nextScene)
     {
-        //SceneManager.LoadScene("LoadingScreen");
-        Debug.Log("After load scene: loading screen");
+        float finishtime = Time.time + 5f;
         // wating 1 sec to look good
-        //yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
 
+        Image loadingBar = GameObject.Find("barOverlap").GetComponent<Image>();
+        loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
+        float endTime = Time.time + 5f;
         AsyncOperation async_op = SceneManager.LoadSceneAsync(nextScene);
         async_op.allowSceneActivation = false;
-
-        //debug only
-        Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
-
-        Image loadingBar = UIManager.Instance.LoadingBar.GetComponent<Image>();
-        loadingBar.rectTransform.sizeDelta = new Vector2(Screen.width, 30);
+        fTime = 0f;
+        Text loadingText = GameObject.Find("loadingText").GetComponent<Text>();
+        cScale = GameObject.Find("Canvas").GetComponent<CanvasScaler>();
+        //loadingBar.fillAmount = 0;
         loadingBar.rectTransform.sizeDelta = new Vector2 (Screen.width - (Screen.width * async_op.progress), 30);
+        loadingText.text = (async_op.progress * 100).ToString() + "%";
 
         bool done = false;
 
         while(!done)
         {
-            Debug.Log("inside the while loop");
-            float progress = async_op.progress;
-            Debug.Log(progress);
             yield return new WaitForSeconds(0.1f);
-            
-            if (progress >=1f)
+            float progress = Time.time / endTime;
+            if (Time.time >= endTime)
             {
                 progress = 0;
                 async_op.allowSceneActivation = true;
@@ -100,6 +102,5 @@ public class LoadScene : MonoBehaviour {
                 loadingBar.rectTransform.sizeDelta = new Vector2(width, 30);
             }
         }
-        Debug.Log("after the while loop");
-    }
+    }*/
 }
