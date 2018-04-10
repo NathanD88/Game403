@@ -12,7 +12,7 @@ public class PositionTracker : MonoBehaviour
 
 
 	// Use this for initialization
-	void Start ()
+	public void nowStart ()
     {
         // Grab the waypoints that exist in the PlayerWaypoint script
         waypoints = GameObject.FindObjectOfType<PlayerWaypoint>().playerWaypoints;

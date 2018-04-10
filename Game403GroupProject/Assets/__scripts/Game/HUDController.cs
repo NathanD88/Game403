@@ -162,7 +162,8 @@ public class HUDController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //_gameController = GameObject.FindObjectOfType<GameController>();
+        _gameController = GameObject.FindObjectOfType<GameController>();
+
         // Defaults
         lapTimeShowing = false;
         heldPowerup = -1;
@@ -183,10 +184,10 @@ public class HUDController : MonoBehaviour
     void Update()
     {
         //raceTime = Time.time;
-        if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
-        {
-            StartCoroutine(showLapTime(RaceTime, 2.0f));
-        }
+        //if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
+        //{
+        //    StartCoroutine(showLapTime(RaceTime, 2.0f));
+        //}
         // ***
 
         // Convert race time into minutes and seconds

@@ -15,8 +15,6 @@ public class GameController : MonoBehaviour
     // Array of all the car gameobjects
     GameObject[] allCars;
 
-
-
     public GameObject pauseMenu;
     public GameObject cd_text;
     
@@ -26,7 +24,7 @@ public class GameController : MonoBehaviour
 
     
 	// Use this for initialization
-	void Start ()
+	public void nowStart ()
     {
         // Populate the cars array
         allCars = GameObject.FindGameObjectsWithTag("PlayerCar");
@@ -39,11 +37,10 @@ public class GameController : MonoBehaviour
         // Attach the HUDController
         hudController = GameObject.FindObjectOfType<HUDController>();
 
+        FindObjectOfType<PositionTracker>().nowStart();
+
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
-
-        Debug.Log(PlayerPrefs.GetInt("SelectedCar"));
-
     }
 	
 	// Update is called once per frame
@@ -106,15 +103,6 @@ public class GameController : MonoBehaviour
         hudController.RaceTime = Time.time - startTime;
         hudController.EnableRaceTimeText();
         
-        /*if (allCars.Length > 1)
-        {
-            Debug.Log(allCars.Length);
-            foreach (GameObject g in allCars)
-            {
-                RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
-                bi.enabled = true;
-            }
-        }*/
         foreach (GameObject g in allCars)
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();

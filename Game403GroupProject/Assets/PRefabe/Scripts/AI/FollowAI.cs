@@ -22,6 +22,8 @@ namespace RVP
         bool targetIsWaypoint;
         VehicleWaypoint targetWaypoint;
 
+        GameController __gameController;
+
         Car thisCar;
 
         public float followDistance;
@@ -70,12 +72,14 @@ namespace RVP
 
             initialSpeed = speed;
 
+            __gameController = FindObjectOfType<GameController>();
+
             InitializeTarget();
         }
 
         void FixedUpdate()
         {
-            if (target)
+            if (target && __gameController.IsGameStarted())
             {
                 if (target != targetPrev)
                 {
