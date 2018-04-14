@@ -162,7 +162,8 @@ public class HUDController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //_gameController = GameObject.FindObjectOfType<GameController>();
+        _gameController = GameObject.FindObjectOfType<GameController>();
+
         // Defaults
         lapTimeShowing = false;
         heldPowerup = -1;
@@ -182,14 +183,11 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Demo purposes ***
-        currentArmor = Mathf.Abs(Mathf.Sin(Time.time)) * 10.0f;
-        speed = Mathf.Abs(Mathf.Sin(Time.time)) * 200.0f;
         //raceTime = Time.time;
-        if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
-        {
-            StartCoroutine(showLapTime(RaceTime, 2.0f));
-        }
+        //if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
+        //{
+        //    StartCoroutine(showLapTime(RaceTime, 2.0f));
+        //}
         // ***
 
         // Convert race time into minutes and seconds
@@ -198,7 +196,10 @@ public class HUDController : MonoBehaviour
 
         // Update HUD elements
         currentArmorHUD.fillAmount = (currentArmor / maxArmor);
-        lapText.text = currentLap.ToString() + " / " + totalLaps.ToString();
+
+        string lapString = (currentLap == 0) ? "1" : currentLap.ToString();
+        lapText.text = lapString + " / " + totalLaps.ToString();
+
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
         float needleZ = Mathf.Lerp(needleStartAngle, needleMaxAngle, speed / 200.0f);
@@ -247,6 +248,28 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
+//HEAD
+    public IEnumerator showWrongWay(bool isWrongWay)
+    {
+        isWrongWay = false;
+
+        if(isWrongWay == false)
+        {
+            wrongWayText.enabled = false;
+        }
+        else
+        {
+            wrongWayText.enabled = true;
+        }
+
+        // Display lap time
+        //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
+        //lapTimeText.enabled = true;
+
+        // Wait for the specified time before hiding again
+        yield return new WaitForSeconds(5);
+    }
+
     //public IEnumerator showWrongWay(bool isWrongWay)
     //{
     //    isWrongWay = false;
@@ -267,6 +290,7 @@ public class HUDController : MonoBehaviour
     //    // Wait for the specified time before hiding again
     //    yield return new WaitForSeconds(timeToDisplay);
     //}
+
 
     // Convert an integer into an ordinal number
     private string intToOrdinal(int i)

@@ -7,6 +7,9 @@ TagManager:
   - Car
   - Underside
   - Pop Tire
+  - PlayerCar
+  - CarLeft
+  - CarRight
   layers:
   - Default
   - TransparentFX

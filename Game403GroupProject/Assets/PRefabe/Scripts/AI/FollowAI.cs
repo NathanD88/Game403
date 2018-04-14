@@ -22,6 +22,10 @@ namespace RVP
         bool targetIsWaypoint;
         VehicleWaypoint targetWaypoint;
 
+        GameController __gameController;
+
+        Car thisCar;
+
         public float followDistance;
         bool close;
 
@@ -33,6 +37,7 @@ namespace RVP
         public float targetVelocity = -1;
         float speedLimit = 1;
         float brakeTime;
+
 
         [Tooltip("Mask for which objects can block the view of the target")]
         public LayerMask viewBlockMask;
@@ -63,19 +68,28 @@ namespace RVP
             rb = GetComponent<Rigidbody>();
             vp = GetComponent<VehicleParent>();
             va = GetComponent<VehicleAssist>();
+            thisCar = GetComponent<Car>();
+
             initialSpeed = speed;
+
+            __gameController = FindObjectOfType<GameController>();
 
             InitializeTarget();
         }
 
         void FixedUpdate()
         {
-            if (target)
+            if (target && __gameController.IsGameStarted())
             {
                 if (target != targetPrev)
                 {
                     InitializeTarget();
+                    targetPoint = targetBody ? target.position + targetBody.velocity : target.position;
+                    targetPoint += Vector3.ProjectOnPlane(Random.insideUnitCircle, Vector3.up) * targetWaypoint.radius / 2;
+                    
                 }
+
+                Debug.DrawLine(tr.position, targetPoint);
 
                 targetPrev = target;
 
@@ -84,11 +98,14 @@ namespace RVP
                 //Can I see the target?
                 targetVisible = !Physics.Linecast(tr.position, target.position, viewBlockMask);
 
-                if (targetVisible || targetIsWaypoint)
-                {
-                    targetPoint = targetBody ? target.position + targetBody.velocity : target.position;
-                }
+                //if (targetVisible || targetIsWaypoint)
+                //{
+                //    targetPoint = targetBody ? target.position + targetBody.velocity : target.position;
+                //    targetPoint += Vector3.ProjectOnPlane(Random.insideUnitCircle, Vector3.up) * targetWaypoint.radius;
+                //    Debug.DrawLine(tr.position, targetPoint);
+                //}
 
+                
                 if (targetIsWaypoint)
                 {
                     //if vehicle is close enough to target waypoint, switch to the next one
@@ -142,8 +159,8 @@ namespace RVP
 
                 //Set vehicle inputs
                 vp.SetAccel(!close && (lookDot > 0 || vp.localVelocity.z < 5) && vp.groundedWheels > 0 && reverseTime == 0 ? speed * speedLimit : 0);
-                vp.SetBrake(reverseTime == 0 && brakeTime == 0 && !(close && vp.localVelocity.z > 0.1f) ? (lookDot < 0.5f && lookDot > 0 && vp.localVelocity.z > 10 ? 0.5f - lookDot : 0) : (reverseTime > 0 ? 1 : (brakeTime > 0 ? brakeTime * 0.2f : 1 - Mathf.Clamp01(Vector3.Distance(tr.position, target.position) / Mathf.Max(0.01f, followDistance)))));
-                vp.SetSteer(reverseTime == 0 ? Mathf.Abs(Mathf.Pow(steerDot, (tr.position - target.position).sqrMagnitude > 20 ? 1 : 2)) * Mathf.Sign(steerDot) : -Mathf.Sign(steerDot) * (close ? 0 : 1));
+                vp.SetBrake(reverseTime == 0 && brakeTime == 0 && !(close && vp.localVelocity.z > 0.1f) ? (lookDot < 0.5f && lookDot > 0 && vp.localVelocity.z > 10 ? 0.5f - lookDot : 0) : (reverseTime > 0 ? 1 : (brakeTime > 0 ? brakeTime * 0.2f : 1 - Mathf.Clamp01(Vector3.Distance(tr.position, targetPoint) / Mathf.Max(0.01f, followDistance)))));
+                vp.SetSteer(reverseTime == 0 ? Mathf.Abs(Mathf.Pow(steerDot, (tr.position - targetPoint).sqrMagnitude > 20 ? 1 : 2)) * Mathf.Sign(steerDot) : -Mathf.Sign(steerDot) * (close ? 0 : 1));
                 vp.SetEbrake((close && vp.localVelocity.z <= 0.1f) || (lookDot <= 0 && vp.velMag > 20) ? 1 : 0);
             }
 

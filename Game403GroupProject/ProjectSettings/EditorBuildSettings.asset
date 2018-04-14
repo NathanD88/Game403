@@ -6,17 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/__scenes/StartScreen.unity
-    guid: fcc32448be2797f48b19d240932b7242
+    path: Assets/__scenes/CarSelectScene.unity
+    guid: cf111394b0666144897507299b00b08e
   - enabled: 1
-    path: Assets/__scenes/MainMenuScreen.unity
-    guid: 9c228c71767eef34baed0472c0444753
-  - enabled: 1
-    path: Assets/__scenes/GameScreen.unity
-    guid: dedae234943f6874286c5c685de84cde
-  - enabled: 1
-    path: Assets/__scenes/GameOverScreen.unity
-    guid: b8d7284c16dae6941a74c39137362eb0
+    path: Assets/__scenes/DesertMap.unity
+    guid: 453e7fbe37e167a4cbc1f422a0a57c4b
   - enabled: 1
     path: Assets/__scenes/LoadingScreen.unity
-    guid: 1d6f90757bac5f34f92bef7a231761f0
+    guid: 7c03a3f2251d46d4b9a094d6dde531d6
+  - enabled: 1
+    path: Assets/__scenes/LevelSelectScreen.unity
+    guid: fe06aa684c3d3c34d8d602e07be260c1
+  - enabled: 1
+    path: Assets/__scenes/StartScreen.unity
+    guid: 6c7d6d17ae5cf6d408457cbcf4307286
+  - enabled: 1
+    path: Assets/__scenes/CreditScreen.unity
+    guid: 2f3952e419e75eb45806b428a0574715
+  - enabled: 1
+    path: Assets/__scenes/MainMenu.unity
+    guid: f7f2a2bac4ba0ba439bb51d5dd80fa82
