@@ -9,14 +9,15 @@ public class CarEngine : MonoBehaviour {
     public WheelCollider wheelFR;
     public WheelCollider wheelRL;
     public WheelCollider wheelRR;
+    public bool offroad = false;
 
     private bool start = false;
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
     private Rigidbody rb;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody>();
         Transform[] pointTransform = path.GetComponentsInChildren<Transform>();
@@ -87,5 +88,18 @@ public class CarEngine : MonoBehaviour {
     public void StartGame(bool b)
     {
         start = b;
+    }
+    public void offtheroad()
+    {
+        if (offroad)
+        {
+            wheelFL.motorTorque = -100;
+            wheelFR.motorTorque = -100;
+        }
+        else
+        {
+            wheelFL.motorTorque = 0;
+            wheelFR.motorTorque = 0;
+        }
     }
 }
