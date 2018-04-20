@@ -39,19 +39,27 @@ public class Car : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButton("Use Powerup") && powerup != null)
+        if (Input.GetButton("Use Powerup"))
         {
-            powerup.UsePowerup(this);
-        }
-        else if (Input.GetButton("Use Powerup") && powerup == null)
-        {
-            Debug.Log("Sorry, no power to use :(");
+            checkFire();
         }
         //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
         if(BOOST)
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.velocity *= 1.015f;
+        }
+    }
+
+    public void checkFire()
+    {
+        if (powerup != null)
+        {
+            powerup.UsePowerup(this);
+        }
+        else
+        {
+            Debug.Log("Sorry, no power to use :(");
         }
     }
 
