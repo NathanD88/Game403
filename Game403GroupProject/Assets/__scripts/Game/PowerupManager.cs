@@ -41,16 +41,45 @@ public class PowerupManager : MonoBehaviour {
 
     public void RandomPickupPlayer(GameObject targetPlayer)
     {
-        if (!generating && targetPlayer.GetComponent<Car>().powerup == null)
+        if (!targetPlayer.GetComponent<Car>().isAI)
         {
-            player = targetPlayer;
-            generating = true;
-            endTime = Time.time + 5f;
-            StartCoroutine(GeneratePickup());
+            if (!generating && targetPlayer.GetComponent<Car>().powerup == null)
+            {
+                player = targetPlayer;
+                generating = true;
+                endTime = Time.time + 5f;
+                StartCoroutine(GeneratePickup(targetPlayer));
+            }
+        }
+        else
+        {
+            GenerateAiPickup(targetPlayer);
         }
     }
     
-    private IEnumerator GeneratePickup()
+    private void GenerateAiPickup(GameObject target)
+    {
+        Car c = target.GetComponent<Car>();
+        Powerup p = null;
+        int randomAI = Random.Range(0, Powerup.POWERUP_COUNT - 1);
+        switch (randomAI)
+        {
+            case 0:
+                p = new RepairKit();
+                break;
+            case 1:
+                p = new Boost();
+                break;
+            case 2:
+                p = new Missile();
+                break;
+            case 3:
+                p = new Bomb();
+                break;
+        }
+        c.powerup = p;
+    }
+    private IEnumerator GeneratePickup(GameObject targetPlayer)
     {
         yield return new WaitForSeconds(0.05f);
         if (Time.time < endTime)
@@ -71,7 +100,7 @@ public class PowerupManager : MonoBehaviour {
             last = rand_pickup;
             _hudcontroller.HeldPowerup = rand_pickup;
             
-            StartCoroutine(GeneratePickup());
+            StartCoroutine(GeneratePickup(targetPlayer));
         }
         else
         {
@@ -106,8 +135,12 @@ public class PowerupManager : MonoBehaviour {
                     currentpowerup = null;
                     break;
             }
-            player.GetComponent<Car>().SetPowerup(currentpowerup);
-            _hudcontroller.HeldPowerup = rand_pickup;
+            targetPlayer.GetComponent<Car>().SetPowerup(currentpowerup);
+            if (!targetPlayer.GetComponent<Car>().isAI)
+            {
+                _hudcontroller.HeldPowerup = rand_pickup;
+            }
+            
             player = null;
             generating = false;
         }
