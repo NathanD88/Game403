@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
         foreach(GameObject g in allCars)
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
+            mi.enabled = false;
             bi.enabled = false;
         }
 
@@ -42,22 +44,28 @@ public class GameController : MonoBehaviour
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    public void pauseButton()
     {
-		if(Input.GetKeyDown(KeyCode.Return))
-        {
-            if(pauseMenu.activeSelf)
-            {
-                Time.timeScale = 1f;
-            }
-            else
-            {
-                Time.timeScale = 0f;
-            }
-            UIManager.Instance.ShowUIContent(pauseMenu);
-        }
+        Time.timeScale = 0.0f;
+        pauseMenu.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+		//if(Input.GetKeyDown(KeyCode.Return))
+  //      {
+  //          if(pauseMenu.activeSelf)
+  //          {
+  //              Time.timeScale = 1f;
+  //          }
+  //          else
+  //          {
+  //              Time.timeScale = 0f;
+  //          }
+  //          UIManager.Instance.ShowUIContent(pauseMenu);
+  //      }
 
         // Update HUD information
         hudController.RaceTime = Time.time - startTime;
@@ -74,11 +82,16 @@ public class GameController : MonoBehaviour
 		pauseMenu.SetActive (false);
 	}
 
+    public void RestartButton()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void QuitButton()
     {
-        //LoadScene.Instance.LoadNextScene("StartScreen");
-		SceneManager.LoadScene("StartScreen");
 		Time.timeScale = 1f;
+        SceneManager.LoadScene("StartScreen");
     }
 
     private IEnumerator StartCountdown()
@@ -106,6 +119,8 @@ public class GameController : MonoBehaviour
         foreach (GameObject g in allCars)
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
+            mi.enabled = true;
             bi.enabled = true;
         }
         isGameStarted = true;
