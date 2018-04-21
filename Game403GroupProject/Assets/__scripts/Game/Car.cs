@@ -32,20 +32,28 @@ public class Car : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         resetView = GetComponent<Rigidbody>().rotation;
         resetPosition = GetComponent<Rigidbody>().transform.position;
+
+        MissileSpawn = gameObject.transform;
+        BombSpawn = gameObject.transform;
         //SetCarStats();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButton("Use Powerup") && this.powerup != null && !isAI)
+        if (Input.GetButton("Use Powerup"))
         {
-            powerup.UsePowerup(this);
-        }
-
-        if(isAI && this.powerup != null)
-        {
-            UseAIPowerup();
+            if (!isAI)
+            {
+                checkFire();
+            }
+            else
+            {
+                if (powerup != null)
+                {
+                    UseAIPowerup();
+                }
+            }            
         }
 
         if (BOOST)
@@ -53,6 +61,7 @@ public class Car : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.velocity *= 1.01f;
         }
+
         if(armor <= 0)
         {
             GameObject.FindObjectOfType<OutOfBounds>().ResetCar(this);
@@ -86,10 +95,16 @@ public class Car : MonoBehaviour
             powerup = null;
         }
     }
+
     public void checkFire()
     {
-
+        if (powerup != null)
+        {
+            powerup.UsePowerup(this);
+        }
+        
     }
+
     private bool RaycastMissileTarget()
     {
         bool hastarget = false;
