@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
-    public Powerup powerup = null;
+    //race vars
     public int position;
-    public int currentLap = 0;
+    public int currentLap = 3;
     public float distance = 0;
     public int nextWaypoint = 0;
-    public float armor = 100;
-    public float maxArmor = 100;
     public Vector3 resetPosition;
     public Quaternion resetView;
 
+    //powerup vars
+    public Powerup powerup = null;
     private bool BOOST = false;
-
+    public bool isAI = true;
     public Transform MissileSpawn;
     public Transform BombSpawn;
 
+    //car related vars
     public enum CAR_TYPE {Muscle, Sport, Tuner };
     public CAR_TYPE m_type;
-
-    //public WheelCollider f_left, f_right;
-
+    public float armor = 100;
+    public float maxArmor = 100;
     private Rigidbody rb;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        //powerup = new Boost(FindObjectOfType<HUDController>());
         rb = GetComponent<Rigidbody>();
         resetView = GetComponent<Rigidbody>().rotation;
         resetPosition = GetComponent<Rigidbody>().transform.position;
@@ -39,28 +38,71 @@ public class Car : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButton("Use Powerup"))
-        {
-            checkFire();
-        }
-        //Debug.Log("Lap: " + currentLap + "  Next Waypoint: " + nextWaypoint);
-        if(BOOST)
-        {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.velocity *= 1.015f;
-        }
-    }
-
-    public void checkFire()
-    {
-        if (powerup != null)
+        if (Input.GetButton("Use Powerup") && this.powerup != null && !isAI)
         {
             powerup.UsePowerup(this);
         }
+
+        if(isAI && this.powerup != null)
+        {
+            UseAIPowerup();
+        }
+
+        if (BOOST)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity *= 1.01f;
+        }
+        if(armor <= 0)
+        {
+            GameObject.FindObjectOfType<OutOfBounds>().ResetCar(this);
+            armor = 100;
+        }
+    }
+
+    private void UseAIPowerup()
+    {
+        if(powerup.m_powerup == Powerup.PowerupType.Missile && position != 1)
+        {
+            if(RaycastMissileTarget())
+            {
+                GameObject.FindObjectOfType<PowerupManager>().SpawnMissile(this.gameObject);
+                powerup = null;
+            }
+        }
+        else if(powerup.m_powerup == Powerup.PowerupType.Boost)
+        {
+            ActivateBoost(true);
+            powerup = null;
+        }
+        else if(powerup.m_powerup == Powerup.PowerupType.RepairKit)
+        {
+            RestoreArmor(100);
+            powerup = null;
+        }
         else
         {
-            Debug.Log("Sorry, no power to use :(");
+            GameObject.FindObjectOfType<PowerupManager>().DropBomb(this.gameObject);
+            powerup = null;
         }
+    }
+
+    private bool RaycastMissileTarget()
+    {
+        bool hastarget = false;
+
+        Ray ray = new Ray(MissileSpawn.position, transform.forward * 20f);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit))
+        {
+            if(hit.collider.CompareTag("Car"))
+            {
+                hastarget = true;
+            }
+        }
+
+        return hastarget;
     }
 
     public void SetPowerup(Powerup p)
