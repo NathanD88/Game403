@@ -392,6 +392,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &85137605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1174023857561622, guid: 663a96381a2b7a644b72b2b8be442377,
+    type: 2}
+  m_PrefabInternal: {fileID: 1859311249}
+--- !u!114 &85137610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85137605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbce0deec835ad48a4afdf536446cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonControl: 3
 --- !u!1 &127381854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2089,7 @@ MonoBehaviour:
   playerCar: {fileID: 0}
   pauseMenu: {fileID: 169716114}
   cd_text: {fileID: 1254628769}
+  isGameOver: 0
 --- !u!4 &956729090
 Transform:
   m_ObjectHideFlags: 0

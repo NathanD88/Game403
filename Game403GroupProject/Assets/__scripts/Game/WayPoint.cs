@@ -23,6 +23,8 @@ public class WayPoint : MonoBehaviour
                 if (!otherCar.isAI && otherCar.currentLap == 3)
                 {
                     GameObject.FindObjectOfType<PlayerWaypoint>().EndRace();
+                    otherCar.gameObject.GetComponent<RVP.BasicInput>().enabled = false;
+                    GameObject.FindObjectOfType<GameController>().isGameOver = true;
                 }
                 else
                 {

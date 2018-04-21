@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     private Text countDown;
     private float startTime = 0f;
     private bool isGameStarted = false;
+    [HideInInspector]
+    public bool isGameOver = false;
 
     
 	// Use this for initialization
@@ -32,8 +34,16 @@ public class GameController : MonoBehaviour
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
             RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
-            mi.enabled = false;
-            bi.enabled = false;
+            if(Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                bi.enabled = true;
+                mi.enabled = false;
+            }
+            else if(Application.platform == RuntimePlatform.Android)
+            {
+                mi.enabled = true;
+                bi.enabled = false;
+            }
         }
 
         // Attach the HUDController
@@ -54,18 +64,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		//if(Input.GetKeyDown(KeyCode.Return))
-  //      {
-  //          if(pauseMenu.activeSelf)
-  //          {
-  //              Time.timeScale = 1f;
-  //          }
-  //          else
-  //          {
-  //              Time.timeScale = 0f;
-  //          }
-  //          UIManager.Instance.ShowUIContent(pauseMenu);
-  //      }
+		if(isGameOver)
+        {
+            if(Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("CarSelectScene");
+            }
+        }
 
         // Update HUD information
         hudController.RaceTime = Time.time - startTime;
@@ -120,8 +125,16 @@ public class GameController : MonoBehaviour
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
             RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
-            mi.enabled = true;
-            bi.enabled = true;
+            if (Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                bi.enabled = true;
+                mi.enabled = false;
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+                mi.enabled = true;
+                bi.enabled = false;
+            }
         }
         isGameStarted = true;
     }

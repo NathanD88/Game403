@@ -86,7 +86,10 @@ public class Car : MonoBehaviour
             powerup = null;
         }
     }
+    public void checkFire()
+    {
 
+    }
     private bool RaycastMissileTarget()
     {
         bool hastarget = false;
