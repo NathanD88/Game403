@@ -14,7 +14,8 @@ public class MobileHUDController : MonoBehaviour, IPointerUpHandler, IPointerDow
     {
         Acceleration,
         Brake,
-        Fire
+        Fire,
+        Menu
     };
 
     public buttonType buttonControl;
@@ -22,9 +23,17 @@ public class MobileHUDController : MonoBehaviour, IPointerUpHandler, IPointerDow
 	// Use this for initialization
 	void Start ()
     {
-        pressed = false;
-        mobileInput = FindObjectOfType<RVP.MobileInput>();
-        playerCar = FindObjectOfType<RVP.CameraControl>().target.gameObject.GetComponent<Car>();
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            pressed = false;
+            mobileInput = FindObjectOfType<RVP.MobileInput>();
+            playerCar = FindObjectOfType<RVP.CameraControl>().target.gameObject.GetComponent<Car>();
+        }
+        else
+        {
+            Debug.Log(Application.platform);
+            this.gameObject.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
