@@ -34,16 +34,8 @@ public class GameController : MonoBehaviour
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
             RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
-            if(Application.platform == RuntimePlatform.WindowsEditor)
-            {
-                bi.enabled = true;
-                mi.enabled = false;
-            }
-            else if(Application.platform == RuntimePlatform.Android)
-            {
-                mi.enabled = true;
-                bi.enabled = false;
-            }
+            bi.enabled = false;
+            mi.enabled = false;
         }
 
         // Attach the HUDController
@@ -135,7 +127,13 @@ public class GameController : MonoBehaviour
                 mi.enabled = true;
                 bi.enabled = false;
             }
+            else if (Application.platform == RuntimePlatform.WSAPlayerX64)
+            {
+                bi.enabled = true;
+                mi.enabled = false;
+            }
         }
+        
         isGameStarted = true;
     }
 

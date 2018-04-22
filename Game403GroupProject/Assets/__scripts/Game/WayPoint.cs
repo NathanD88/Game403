@@ -16,7 +16,6 @@ public class WayPoint : MonoBehaviour
 
         if (other.transform.parent.CompareTag("PlayerCar"))
         {
-
             // If this is the start waypoint and the car's next waypoint is 0, increase lap
             if (waypointNumber == 0 && otherCar.nextWaypoint == 0)
             {
@@ -55,11 +54,11 @@ public class WayPoint : MonoBehaviour
                     }
 
                     activeWaypoint.playerWaypoints[waypointNumber].GetComponent<MeshRenderer>().enabled = false;
-
-                    otherCar.resetPosition = this.transform.position;
-                    otherCar.resetPosition.y = 31.6f;
-                    otherCar.resetView = this.transform.rotation;
                 }
+
+                otherCar.resetPosition = this.transform.position;
+                otherCar.resetPosition.y = 31.6f;
+                otherCar.resetView = this.transform.rotation;
             }
         }
     }
