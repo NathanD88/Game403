@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerWaypoint : MonoBehaviour
 {
+
+    public GameObject Standings_Panel;
+
     public GameObject[] playerWaypoints;
 
     int counter = 0;
@@ -51,6 +54,11 @@ public class PlayerWaypoint : MonoBehaviour
                 counter = 0;
             }
         }
+    }
+
+    public void EndRace()
+    {
+        UIManager.Instance.ShowRaceStandings(Standings_Panel);
     }
 }
 

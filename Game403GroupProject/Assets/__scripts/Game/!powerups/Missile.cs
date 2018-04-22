@@ -9,6 +9,11 @@ public class Missile : Powerup {
     public Missile(HUDController hc)
     {
         _hudController = hc;
+        
+    }
+    public Missile()
+    {
+        m_powerup = PowerupType.Missile;
     }
     public override void UsePowerup(Car c)
     {

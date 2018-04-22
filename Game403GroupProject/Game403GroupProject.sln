@@ -1,10 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Visual Studio 2017
 =======
 # Visual Studio 2015
 >>>>>>> e302c1e08a91d8213a7e40f045693a190797250c
+=======
+# Visual Studio 2017
+>>>>>>> faad697687c6d0fbe28207798202f5d92c96729a
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game403GroupProject", "Game403GroupProject.csproj", "{1D72ACF7-7869-1980-8C8D-9EA7384F657C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game403GroupProject.Plugins", "Game403GroupProject.Plugins.csproj", "{0B4A6642-6783-D5A9-2277-F4D9702CF535}"

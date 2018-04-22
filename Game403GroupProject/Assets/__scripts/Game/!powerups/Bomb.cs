@@ -10,6 +10,10 @@ public class Bomb : Powerup {
     {
         _hudController = hc;
     }
+    public Bomb()
+    {
+        m_powerup = PowerupType.Bomb;
+    }
     public override void UsePowerup(Car c)
     {
         GameObject player = c.gameObject;
