@@ -21,12 +21,17 @@ public class OutOfBounds : MonoBehaviour {
         Car thisCar;
         if (other.transform.parent.CompareTag("PlayerCar") && (thisCar = other.GetComponentInParent<Car>()))
         {
-            thisCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            thisCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            thisCar.transform.rotation = thisCar.resetView;
-            thisCar.transform.position = thisCar.resetPosition;
+            ResetCar(thisCar);
             //thisCar.GetComponent<Rigidbody>().rotation = thisCar.resetView;
             
         }
+    }
+
+    public void ResetCar(Car c)
+    {
+        c.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        c.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        c.transform.rotation = c.resetView;
+        c.transform.position = c.resetPosition;
     }
 }
