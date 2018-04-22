@@ -135,6 +135,7 @@ public class PowerupManager : MonoBehaviour {
                     currentpowerup = null;
                     break;
             }
+
             targetPlayer.GetComponent<Car>().SetPowerup(currentpowerup);
             if (!targetPlayer.GetComponent<Car>().isAI)
             {

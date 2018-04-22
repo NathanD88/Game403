@@ -138,6 +138,7 @@ public class HUDController : MonoBehaviour
     [Header("Element References")]
     public Image currentArmorHUD;
     public RectTransform speedometerNeedleHUD;
+    public GameObject speedometerHUD;
     public Text lapText;
     public Text raceTimeText;
     public Text lapTimeText;
@@ -177,6 +178,11 @@ public class HUDController : MonoBehaviour
         if (Powerup.POWERUP_COUNT != powerups.Length)
         {
             Debug.LogError("powerups enum from GameController script does not match number of powerup images in HUDController script!");
+        }
+
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            speedometerHUD.SetActive(true);
         }
     }
 

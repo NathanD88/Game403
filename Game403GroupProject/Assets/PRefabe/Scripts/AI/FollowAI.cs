@@ -85,7 +85,7 @@ namespace RVP
                 {
                     InitializeTarget();
                     targetPoint = targetBody ? target.position + targetBody.velocity : target.position;
-                    targetPoint += Vector3.ProjectOnPlane(Random.insideUnitCircle, Vector3.up) * targetWaypoint.radius / 2;
+                    targetPoint += Vector3.ProjectOnPlane(Random.insideUnitCircle, Vector3.up) * targetWaypoint.radius / 1.2f;
                     
                 }
 

@@ -31,7 +31,6 @@ public class MobileHUDController : MonoBehaviour, IPointerUpHandler, IPointerDow
         }
         else
         {
-            Debug.Log(Application.platform);
             this.gameObject.SetActive(false);
         }
 	}
