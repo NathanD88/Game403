@@ -34,6 +34,7 @@ public class CarSelector : MonoBehaviour {
 		if (Models[index]) 
 		{
 			Models[index].SetActive (true);
+            Models[index].GetComponent<Car>().isAI = false;
 		}
         
         if(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RVP.CameraControl>() != null)

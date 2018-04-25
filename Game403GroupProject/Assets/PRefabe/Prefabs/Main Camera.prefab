@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - component: {fileID: 499516}
   - component: {fileID: 2061420}
-  - component: {fileID: 9263024}
   - component: {fileID: 12418828}
   - component: {fileID: 8149152}
   - component: {fileID: 11410548}
@@ -64,19 +63,14 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!81 &8149152
 AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177336}
-  m_Enabled: 1
---- !u!92 &9263024
-Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}

@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     private Text countDown;
     private float startTime = 0f;
     private bool isGameStarted = false;
+    [HideInInspector]
+    public bool isGameOver = false;
 
     
 	// Use this for initialization
@@ -31,7 +33,9 @@ public class GameController : MonoBehaviour
         foreach(GameObject g in allCars)
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
             bi.enabled = false;
+            mi.enabled = false;
         }
 
         // Attach the HUDController
@@ -42,21 +46,22 @@ public class GameController : MonoBehaviour
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    public void pauseButton()
     {
-		if(Input.GetKeyDown(KeyCode.Return))
+        Time.timeScale = 0.0f;
+        pauseMenu.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+		if(isGameOver)
         {
-            if(pauseMenu.activeSelf)
+            if(Input.anyKeyDown)
             {
-                Time.timeScale = 1f;
+                SceneManager.LoadScene("CarSelectScene");
             }
-            else
-            {
-                Time.timeScale = 0f;
-            }
-            UIManager.Instance.ShowUIContent(pauseMenu);
         }
 
         // Update HUD information
@@ -74,11 +79,16 @@ public class GameController : MonoBehaviour
 		pauseMenu.SetActive (false);
 	}
 
+    public void RestartButton()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void QuitButton()
     {
-        //LoadScene.Instance.LoadNextScene("StartScreen");
-		SceneManager.LoadScene("StartScreen");
 		Time.timeScale = 1f;
+        SceneManager.LoadScene("StartScreen");
     }
 
     private IEnumerator StartCountdown()
@@ -106,8 +116,24 @@ public class GameController : MonoBehaviour
         foreach (GameObject g in allCars)
         {
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
-            bi.enabled = true;
+            RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
+            if (Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                bi.enabled = true;
+                mi.enabled = false;
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+                mi.enabled = true;
+                bi.enabled = false;
+            }
+            else if (Application.platform == RuntimePlatform.WSAPlayerX64)
+            {
+                bi.enabled = true;
+                mi.enabled = false;
+            }
         }
+        
         isGameStarted = true;
     }
 

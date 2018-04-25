@@ -94,4 +94,25 @@ public class UIManager : MonoBehaviour {
         }
         return null;
     }
+
+    public void ShowRaceStandings(GameObject pos_panel)
+    {
+        if (!pos_panel.activeSelf)
+            pos_panel.SetActive(true);
+
+        Image[] pos_text = pos_panel.GetComponentsInChildren<Image>();
+
+        Car[] allCars = GameObject.FindObjectsOfType<Car>();
+        for(int i = 1; i < pos_text.Length;i++)
+        {
+            foreach(Car c in allCars)
+            {
+                if(c.position == i-1)
+                {
+                    pos_text[i].GetComponentInChildren<Text>().text = c.gameObject.name;
+                    break;
+                }
+            }
+        }
+    }
 }

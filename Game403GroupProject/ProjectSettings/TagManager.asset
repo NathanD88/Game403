@@ -10,6 +10,7 @@ TagManager:
   - PlayerCar
   - CarLeft
   - CarRight
+  - CanDestroy
   layers:
   - Default
   - TransparentFX

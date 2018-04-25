@@ -310,6 +310,7 @@
     <Compile Include="Assets\__scripts\Game\CarEngine.cs" />
     <Compile Include="Assets\__scripts\Game\GameController.cs" />
     <Compile Include="Assets\__scripts\Game\HUDController.cs" />
+    <Compile Include="Assets\__scripts\Game\MobileHUDController.cs" />
     <Compile Include="Assets\__scripts\Game\OffRoadSlowdown.cs" />
     <Compile Include="Assets\__scripts\Game\Path.cs" />
     <Compile Include="Assets\__scripts\Game\PlayerPath.cs" />
@@ -384,19 +385,31 @@
     <Compile Include="Assets\PRefabe\Scripts\Vehicle Control\VehicleBalance.cs" />
     <Compile Include="Assets\PRefabe\Scripts\Vehicle Control\VehicleDebug.cs" />
     <Compile Include="Assets\PRefabe\Scripts\Vehicle Control\VehicleParent.cs" />
+    <Compile Include="Assets\Simple Explosion\Demo\Script (for Demo)\ExplosionControl.cs" />
+    <Compile Include="Assets\Simple Explosion\Scripts\GraphicExplosion.cs" />
+    <Compile Include="Assets\Simple Explosion\Scripts\light_control.cs" />
+    <Compile Include="Assets\Simple Explosion\Scripts\PhysicalExplosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
     <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\EnergyShield\ProjectSettings\ProjectVersion.txt" />
+    <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
     <None Include="Assets\PRefabe\Shaders\Tires-Bump.shader" />
     <None Include="Assets\PRefabe\Shaders\Tires.shader" />
+    <None Include="Assets\Simple Explosion\Shader\Exposion.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-    <None Include="Assets\__scenes\DesertMapOwnership.txt" />
+    <None Include="Assets\Wispy Sky\ReadMe.txt" />
+    <None Include="Assets\__scenes\Credits\DesertMapOwnership.txt" />
     <None Include="Assets\__scenes\Environment\Contractors\RuinedCar\Shaders\Normal-BumpSpec.shader" />
     <None Include="Assets\__scenes\Rusty Vehicles\CullOffAlpha.shader" />
     <None Include="Assets\__scenes\Rusty Vehicles\Info.txt" />
