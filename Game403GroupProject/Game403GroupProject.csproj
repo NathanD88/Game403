@@ -409,7 +409,7 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
     <None Include="Assets\Wispy Sky\ReadMe.txt" />
-    <None Include="Assets\__scenes\DesertMapOwnership.txt" />
+    <None Include="Assets\__scenes\Credits\DesertMapOwnership.txt" />
     <None Include="Assets\__scenes\Environment\Contractors\RuinedCar\Shaders\Normal-BumpSpec.shader" />
     <None Include="Assets\__scenes\Rusty Vehicles\CullOffAlpha.shader" />
     <None Include="Assets\__scenes\Rusty Vehicles\Info.txt" />
