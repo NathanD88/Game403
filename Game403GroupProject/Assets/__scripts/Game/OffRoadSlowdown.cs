@@ -16,18 +16,16 @@ public class OffRoadSlowdown : MonoBehaviour {
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PlayerCar")
+        if (other.transform.parent.gameObject.CompareTag("PlayerCar"))
         {
-            //other.GetComponent<VehicleAssist>().offroad = true;
-            Debug.Log("Off the Road");
+            other.transform.parent.GetComponent<Rigidbody>().drag = 0.5f; 
         }
     }
-    /*void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "PlayerCar")
+        if (other.transform.parent.gameObject.CompareTag("PlayerCar"))
         {
-            //other.GetComponent<"VehicleAssist">().offroad = false;
-            Debug.Log("back On Track");
+            other.transform.parent.GetComponent<Rigidbody>().drag = 0.01f;
         }
-    }*/
+    }
 }
