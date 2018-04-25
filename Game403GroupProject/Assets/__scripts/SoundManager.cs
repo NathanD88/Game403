@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour {
+public class SoundManager : MonoBehaviour
+{
+
     public static SoundManager Instance
     {
         get
@@ -27,17 +29,5 @@ public class SoundManager : MonoBehaviour {
     {
         return Instance;
     }
-
-    // Use this for initialization
-    void Start () {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    //Functions go here
 
 }
