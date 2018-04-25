@@ -89,17 +89,4 @@ public class CarEngine : MonoBehaviour {
     {
         start = b;
     }
-    public void offtheroad()
-    {
-        if (offroad)
-        {
-            wheelFL.motorTorque = -100;
-            wheelFR.motorTorque = -100;
-        }
-        else
-        {
-            wheelFL.motorTorque = 0;
-            wheelFR.motorTorque = 0;
-        }
-    }
 }

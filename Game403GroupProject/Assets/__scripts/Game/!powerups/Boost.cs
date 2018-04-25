@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boost : Powerup {
-    private float endBoost = 0f;
     private HUDController _hudController;
 
     public Boost(HUDController hc)
