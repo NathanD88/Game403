@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
-
+	/*
     private CanvasScaler cScale;
     private float fTime;
     private float screen_width;
@@ -51,17 +51,22 @@ public class LoadScene : MonoBehaviour {
     }
 
     //custom function go here
+*/
+	public void gameexit()
+	{
+		Application.Quit();
+	}
 
     public void LoadNextScene(string sName)
     {
-        if(Time.timeScale == 0f)
+        /*if(Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-        }
-        SceneManager.LoadScene("LoadingScreen");
-        StartCoroutine(LoadNextSceneAsync(sName));
+        }*/
+		SceneManager.LoadScene(sName);
+       // StartCoroutine(LoadNextSceneAsync(sName));
     }
-    private IEnumerator LoadNextSceneAsync(string nextScene)
+  /*  private IEnumerator LoadNextSceneAsync(string nextScene)
     {
         float finishtime = Time.time + 5f;
         // wating 1 sec to look good
@@ -97,5 +102,5 @@ public class LoadScene : MonoBehaviour {
                 loadingBar.rectTransform.sizeDelta = new Vector2(width, 30);
             }
         }
-    }
+    }*/
 }

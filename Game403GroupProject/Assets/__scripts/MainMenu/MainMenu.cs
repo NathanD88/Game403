@@ -16,6 +16,6 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadSceneButton(string scene)
     {
-        LoadScene.Instance.LoadNextScene(scene);
+      //  LoadScene.Instance.LoadNextScene(scene);
     }
 }

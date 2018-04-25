@@ -10,8 +10,11 @@ public class Missile : Powerup {
     {
         _hudController = hc;
     }
-    public override void UsePowerup()
+    public override void UsePowerup(Car c)
     {
+        GameObject player = c.gameObject;
+        GameObject.FindObjectOfType<PowerupManager>().SpawnMissile(player);
         _hudController.HeldPowerup = -1;
+        c.powerup = null;
     }
 }

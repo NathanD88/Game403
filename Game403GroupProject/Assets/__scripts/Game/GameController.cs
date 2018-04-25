@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -21,44 +22,26 @@ public class GameController : MonoBehaviour
     private float startTime = 0f;
     private bool isGameStarted = false;
 
-    public void GenerateRandomPowerup(GameObject player)
-    {
-        int random_powerup = Random.Range(0, Powerup.POWERUP_COUNT - 1);
-        Powerup currentpowerup;
-        switch(random_powerup)
-        {
-            case 0:
-                currentpowerup = new RepairKit(hudController);
-                break;
-            case 1:
-                currentpowerup = new Boost(hudController);
-                break;
-            case 2:
-                currentpowerup = new Missile(hudController);
-                break;
-            case 3:
-                currentpowerup = new OilSlick(hudController);
-                break;
-            default:
-                currentpowerup = null;
-                break;
-        }
-        player.GetComponent<Car>().SetPowerup(currentpowerup);
-        FindObjectOfType<HUDController>().HeldPowerup = random_powerup;
-    }
-
+    
 	// Use this for initialization
-	void Start ()
+	public void nowStart ()
     {
         // Populate the cars array
-        allCars = GameObject.FindGameObjectsWithTag("Car");
+        allCars = GameObject.FindGameObjectsWithTag("PlayerCar");
+        foreach(GameObject g in allCars)
+        {
+            RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            bi.enabled = false;
+        }
 
         // Attach the HUDController
         hudController = GameObject.FindObjectOfType<HUDController>();
 
+        FindObjectOfType<PositionTracker>().nowStart();
+
         countDown = cd_text.GetComponent<Text>();
         StartCoroutine(StartCountdown());
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -85,15 +68,23 @@ public class GameController : MonoBehaviour
         hudController.Speed = playerCar.GetComponentInParent<RVP.VehicleParent>().localVelocity.magnitude * 3.5f;
     }
 
+	public void ResumeButton()
+	{
+		Time.timeScale = 1f;
+		pauseMenu.SetActive (false);
+	}
+
     public void QuitButton()
     {
-        LoadScene.Instance.LoadNextScene("StartScreen");
+        //LoadScene.Instance.LoadNextScene("StartScreen");
+		SceneManager.LoadScene("StartScreen");
+		Time.timeScale = 1f;
     }
 
     private IEnumerator StartCountdown()
     {
         hudController.DisableRaceTimeText();
-        int cnt = 5;
+        int cnt = 3;
         countDown.text = cnt.ToString();
         while(cnt > 0)
         {
@@ -112,13 +103,10 @@ public class GameController : MonoBehaviour
         hudController.RaceTime = Time.time - startTime;
         hudController.EnableRaceTimeText();
         
-        if (allCars.Length > 1)
+        foreach (GameObject g in allCars)
         {
-            Debug.Log(allCars.Length);
-            foreach (GameObject g in allCars)
-            {
-                g.GetComponent<CarEngine>().StartGame(true);
-            }
+            RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
+            bi.enabled = true;
         }
         isGameStarted = true;
     }
