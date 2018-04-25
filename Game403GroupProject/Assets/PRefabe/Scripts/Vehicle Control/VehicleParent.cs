@@ -263,6 +263,7 @@ namespace RVP
 
         public void SetAccel(float f)
         {
+            //f = f * 0.5f;
             f = Mathf.Clamp(f, -1, 1);
             accelInput = f;
         }

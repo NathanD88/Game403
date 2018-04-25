@@ -7,7 +7,6 @@ public class CarSelector : MonoBehaviour {
 
 	private GameObject[] Models;
 	//Default index of the car
-	private int selectionIndex = 0;
 
 	private int index;
 

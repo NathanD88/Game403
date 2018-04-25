@@ -9,14 +9,15 @@ public class CarEngine : MonoBehaviour {
     public WheelCollider wheelFR;
     public WheelCollider wheelRL;
     public WheelCollider wheelRR;
+    public bool offroad = false;
 
     private bool start = false;
     private List<Transform> points = new List<Transform>();
     private int currentPoint = 0;
     private Rigidbody rb;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody>();
         Transform[] pointTransform = path.GetComponentsInChildren<Transform>();
