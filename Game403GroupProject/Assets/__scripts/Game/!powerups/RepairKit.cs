@@ -10,6 +10,10 @@ public class RepairKit : Powerup {
     {
         _hudController = hc;
     }
+    public RepairKit()
+    {
+        m_powerup = PowerupType.RepairKit;
+    }
 
     public override void UsePowerup(Car c)
     {

@@ -10,6 +10,10 @@ public class Boost : Powerup {
     {
         _hudController = hc;
     }
+    public Boost()
+    {
+        m_powerup = PowerupType.Boost;
+    }
     public override void UsePowerup(Car c)
     {
         c.ActivateBoost(true);

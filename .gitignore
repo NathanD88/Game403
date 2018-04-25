@@ -3,6 +3,7 @@
 # =============== #
 Game403GroupProject/Temp/
 Game403GroupProject/Library/
+Game403GroupProject/Builds/
 
 # Visual Studio 2015 cache directory
 Game403GroupProject/.vs/
@@ -31,7 +32,4 @@ Game403GroupProject/._*
 Game403GroupProject/.Spotlight-V100
 Game403GroupProject/.Trashes
 Game403GroupProject/ehthumbs.db
-Game403GroupProject/Thumbs.db
-Game403GroupProject/Assets/_scenes/etc.meta~parent of cc66dab... More Enviroment Stuff added. Desert area and mountain added.meta
-Game403GroupProject/Assets/_scenes/etc.meta~HEAD.meta
-Game403GroupProject/Assets/Textures/Thumbs.db.meta
+*/*Thumbs.db*
