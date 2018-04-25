@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    // Racer names!
+    public string[] names;
+    private List<string> racer_names = new List<string>();
+
     // Reference to HUDController
     private HUDController hudController;
 
@@ -24,14 +28,24 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public bool isGameOver = false;
 
-    
-	// Use this for initialization
-	public void nowStart ()
+
+    // Use this for initialization
+    public void nowStart ()
     {
+        FillNameList();
+
         // Populate the cars array
         allCars = GameObject.FindGameObjectsWithTag("PlayerCar");
+
+        int j = racer_names.Count;
+
         foreach(GameObject g in allCars)
         {
+            int i = Random.Range(0, j);
+            g.name = racer_names[i];
+            racer_names.RemoveAt(i);
+            j--;
+
             RVP.BasicInput bi = g.GetComponent<RVP.BasicInput>();
             RVP.MobileInputGet mi = g.GetComponent<RVP.MobileInputGet>();
             bi.enabled = false;
@@ -140,5 +154,13 @@ public class GameController : MonoBehaviour
     public bool IsGameStarted()
     {
         return isGameStarted;
+    }
+
+    private void FillNameList()
+    {
+        foreach(string s in names)
+        {
+            racer_names.Add(s);
+        }
     }
 }

@@ -4,13 +4,41 @@ timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Car9 1
+    100004: FLWheel
+    100006: FRWheel
+    100008: RLWheel
+    100010: RRWheel
+    400000: //RootNode
+    400002: Car9 1
+    400004: FLWheel
+    400006: FRWheel
+    400008: RLWheel
+    400010: RRWheel
+    2300000: Car9 1
+    2300002: FLWheel
+    2300004: FRWheel
+    2300006: RLWheel
+    2300008: RRWheel
+    3300000: Car9 1
+    3300002: FLWheel
+    3300004: FRWheel
+    3300006: RLWheel
+    3300008: RRWheel
     4300000: FLWheel
     4300002: RLWheel
     4300004: FRWheel
     4300006: RRWheel
     4300008: CadillacBody
     4300010: Car9
-  externalObjects: {}
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Car9Mat
+    second: {fileID: 2100000, guid: 43162979aa00e5046b659ed91feb7481, type: 2}
   materials:
     importMaterials: 1
     materialName: 1
