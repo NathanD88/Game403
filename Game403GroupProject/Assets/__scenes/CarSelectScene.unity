@@ -278,6 +278,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3402eed8a6894c442a0c85be58501f17, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &122522310 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1395652624716386, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &122522312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122522310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &162950081
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +488,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195086452}
   m_Mesh: {fileID: 4300004, guid: a03a9832819ea4c298801fad704e5225, type: 3}
+--- !u!1 &280712362 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1312486225777656, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &280712364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280712362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &330435823
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349363936
@@ -653,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393063784
@@ -1462,20 +1518,15 @@ RectTransform:
   m_GameObject: {fileID: 853771723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1666735, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1151174579}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: -89, y: 73}
+  m_AnchoredPosition: {x: -70, y: 61}
   m_SizeDelta: {x: 100, y: 100}
-=======
-  m_AnchoredPosition: {x: -100, y: 50}
-  m_SizeDelta: {x: 200, y: 125}
->>>>>>> 6f0cea78aa70c5c9fbbd9047ffb803ccbc52ec32
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853771725
 MonoBehaviour:
@@ -1505,7 +1556,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 195bcb1f7163849488715f9e0816ff44,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 86c2fc58b06ca0b4ca5728c15e417cd0, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6bd34014062a06149a5f1144b7de8207, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1563,6 +1614,62 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853771723}
+--- !u!1 &901602374 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1001071033794328, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &901602376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901602374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
+--- !u!1 &943786566 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1024193355903124, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &943786568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943786566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &948876203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,20 +1878,15 @@ RectTransform:
   m_GameObject: {fileID: 1028455637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.166674, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1151174579}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: 89, y: 73}
+  m_AnchoredPosition: {x: 70, y: 73}
   m_SizeDelta: {x: 100, y: 100}
-=======
-  m_AnchoredPosition: {x: 100, y: 50}
-  m_SizeDelta: {x: 200, y: 125}
->>>>>>> 6f0cea78aa70c5c9fbbd9047ffb803ccbc52ec32
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028455639
 MonoBehaviour:
@@ -1814,7 +1916,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: bfb4e187ee58bcf419210660fd6cbc12,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 4231f77177887a945b7f39e284fabc2b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 3249ed0038c9da247a0ef065eb151d75, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1872,6 +1974,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1028455637}
+--- !u!1 &1029756561 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1186645465436038, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &1029756563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1029756561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &1056229001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2236,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1182403630 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1029443014339702, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &1182403632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182403630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &1216176524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,6 +2355,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1216176524}
   m_Mesh: {fileID: 4300000, guid: a03a9832819ea4c298801fad704e5225, type: 3}
+--- !u!1 &1231038060 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1565140554338474, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &1231038062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1231038060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &1434170210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2584,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555882759}
   m_Mesh: {fileID: 4300002, guid: a03a9832819ea4c298801fad704e5225, type: 3}
+--- !u!1 &1561508374 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1753774972645520, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &1561508376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561508374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &1567911660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,7 +2721,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 1
+  m_ForceModuleActive: 0
 --- !u!114 &1581024451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3228,7 +3442,7 @@ GameObject:
   - component: {fileID: 1948379812}
   - component: {fileID: 1948379811}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: UIManagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3270,6 +3484,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1969436479 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1566474067314264, guid: 3402eed8a6894c442a0c85be58501f17,
+    type: 2}
+  m_PrefabInternal: {fileID: 87458257}
+--- !u!114 &1969436481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969436479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd017cffee2bfc147bec5606d91bd739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentLap: 3
+  distance: 0
+  nextWaypoint: 0
+  resetPosition: {x: 0, y: 0, z: 0}
+  resetView: {x: 0, y: 0, z: 0, w: 0}
+  isAI: 1
+  MissileSpawn: {fileID: 0}
+  BombSpawn: {fileID: 0}
+  m_type: 0
+  armor: 100
+  maxArmor: 100
 --- !u!1 &2032004374
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,8 +7,8 @@ public class LevelSelect : MonoBehaviour {
 
 
 
-    public void LevelSelected()
+    public void LevelSelected(string scene)
     {
-        SceneManager.LoadScene("DesertMap");
+        SceneManager.LoadScene(scene);
     }
 }

@@ -18,11 +18,14 @@ EditorBuildSettings:
     path: Assets/__scenes/DesertMap.unity
     guid: 453e7fbe37e167a4cbc1f422a0a57c4b
   - enabled: 1
-    path: Assets/__scenes/LoadingScreen.unity
-    guid: 7c03a3f2251d46d4b9a094d6dde531d6
-  - enabled: 1
     path: Assets/__scenes/LevelSelectScreen.unity
     guid: fe06aa684c3d3c34d8d602e07be260c1
   - enabled: 1
     path: Assets/__scenes/CreditScreen.unity
     guid: 2f3952e419e75eb45806b428a0574715
+  - enabled: 1
+    path: Assets/__scenes/City-Prototype-1.unity
+    guid: dbab1db8b8c8cc247bc8c6436c54e74b
+  - enabled: 1
+    path: Assets/__scenes/ForestMap.unity
+    guid: 2cbb28e64fa8b8741ab1ae019aac976f
