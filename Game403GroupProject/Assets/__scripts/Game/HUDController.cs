@@ -16,6 +16,9 @@ public class HUDController : MonoBehaviour
 
     private bool lapTimeShowing;
 
+    [Header("Appearance")]
+    public Color hudColor;
+
     [Header("Game Controller Reference")]
     [SerializeField]
     private GameController _gameController;
@@ -140,14 +143,12 @@ public class HUDController : MonoBehaviour
     public RectTransform speedometerNeedleHUD;
     public GameObject speedometerHUD;
     public Text lapText;
+    public Text lapLabel;
     public Text raceTimeText;
     public Text lapTimeText;
     public Text positionText;
+    public Text countdownText;
     public Image heldItemHUD;
-    //
-    public Text item_text;
-    //
-
     public Text wrongWayText;
 
 
@@ -185,18 +186,19 @@ public class HUDController : MonoBehaviour
         {
             speedometerHUD.SetActive(true);
         }
-    }
+
+        // Apply HUD Color
+        lapText.color = hudColor;
+        raceTimeText.color = hudColor;
+        lapTimeText.color = hudColor;
+        positionText.color = hudColor;
+        lapLabel.color = hudColor;
+        countdownText.color = hudColor;
+}
 
     // Update is called once per frame
     void Update()
     {
-        //raceTime = Time.time;
-        //if (Time.time % 4 >= 3 && !lapTimeShowing && _gameController.IsGameStarted())
-        //{
-        //    StartCoroutine(showLapTime(RaceTime, 2.0f));
-        //}
-        // ***
-
         // Convert race time into minutes and seconds
         float raceTimeMinutes = (int)(raceTime / 60);
         float raceTimeSeconds = raceTime % 60;
@@ -204,11 +206,15 @@ public class HUDController : MonoBehaviour
         // Update HUD elements
         currentArmorHUD.fillAmount = (currentArmor / maxArmor);
 
+        // Convert the current/total laps to string
         string lapString = (currentLap == 0) ? "1" : currentLap.ToString();
         lapText.text = lapString + " / " + totalLaps.ToString();
 
+        // Convert time to formatted string
         raceTimeText.text = raceTimeMinutes.ToString() + ":" + raceTimeSeconds.ToString("00.00");
         positionText.text = intToOrdinal(position);
+
+        // Convert speed to speedometer needle position
         float needleZ = Mathf.Lerp(needleStartAngle, needleMaxAngle, speed / 200.0f);
         speedometerNeedleHUD.transform.eulerAngles = new Vector3(1.0f, 1.0f, needleZ);
 
@@ -255,8 +261,8 @@ public class HUDController : MonoBehaviour
         lapTimeText.enabled = false;
     }
 
-//HEAD
-    public IEnumerator showWrongWay(bool isWrongWay)
+    // Show wrong way text
+    public void showWrongWay(bool isWrongWay)
     {
         isWrongWay = false;
 
@@ -268,36 +274,7 @@ public class HUDController : MonoBehaviour
         {
             wrongWayText.enabled = true;
         }
-
-        // Display lap time
-        //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
-        //lapTimeText.enabled = true;
-
-        // Wait for the specified time before hiding again
-        yield return new WaitForSeconds(5);
     }
-
-    //public IEnumerator showWrongWay(bool isWrongWay)
-    //{
-    //    isWrongWay = false;
-
-    //    if(isWrongWay == false)
-    //    {
-    //        wrongWayText.enabled = false;
-    //    }
-    //    else
-    //    {
-    //        wrongWayText.enabled = true;
-    //    }
-
-    //    // Display lap time
-    //    //lapTimeText.text = "Lap Time  " + lapTimeMinutes.ToString() + ":" + lapTimeSeconds.ToString("00.00");
-    //    //lapTimeText.enabled = true;
-
-    //    // Wait for the specified time before hiding again
-    //    yield return new WaitForSeconds(timeToDisplay);
-    //}
-
 
     // Convert an integer into an ordinal number
     private string intToOrdinal(int i)
@@ -322,10 +299,13 @@ public class HUDController : MonoBehaviour
 
         return s;
     }
+
+
     public void DisableRaceTimeText()
     {
         raceTimeText.gameObject.SetActive(false);
     }
+
     public void EnableRaceTimeText()
     {
         raceTimeText.gameObject.SetActive(true);

@@ -3475,10 +3475,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1948379813}
-  - component: {fileID: 1948379812}
   - component: {fileID: 1948379811}
   m_Layer: 0
-  m_Name: UIManagger
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3495,18 +3494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 357dcf66ea7562d45becd82c718c689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1948379812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1948379810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b6103c04f180aa42a321b1114b7cdb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoadingBar: {fileID: 0}
 --- !u!4 &1948379813
 Transform:
   m_ObjectHideFlags: 0
@@ -3514,7 +3501,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948379810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0282686, y: 3.548909, z: -2.0591908}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
