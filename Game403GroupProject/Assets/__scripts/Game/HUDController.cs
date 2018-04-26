@@ -164,6 +164,7 @@ public class HUDController : MonoBehaviour
     void Start()
     {
         _gameController = GameObject.FindObjectOfType<GameController>();
+        _gameController.nowStart();
 
         // Defaults
         lapTimeShowing = false;

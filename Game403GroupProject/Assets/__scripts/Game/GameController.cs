@@ -79,6 +79,10 @@ public class GameController : MonoBehaviour
         }
 
         // Update HUD information
+        if(hudController == null)
+        {
+            hudController = GameObject.FindObjectOfType<HUDController>();
+        }
         hudController.RaceTime = Time.time - startTime;
         hudController.Position = playerCar.position;
         hudController.CurrentLap = playerCar.currentLap;
