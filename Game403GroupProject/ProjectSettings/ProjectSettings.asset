@@ -205,7 +205,6 @@ PlayerSettings:
   tvOSSmallIconLayers: []
   tvOSSmallIconLayers2x: []
   tvOSLargeIconLayers: []
-  tvOSLargeIconLayers2x: []
   tvOSTopShelfImageLayers: []
   tvOSTopShelfImageLayers2x: []
   tvOSTopShelfImageWideLayers: []
@@ -574,11 +573,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Game403GroupProject
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Squirtle
+  metroCertificateIssuer: Squirtle
+  metroCertificateNotAfter: 80dcceba96fcd401
   metroApplicationDescription: Game403GroupProject
   wsaImages: {}
   metroTileShortName: 
