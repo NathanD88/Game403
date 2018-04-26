@@ -23,6 +23,7 @@ public class WayPoint : MonoBehaviour
                 {
                     GameObject.FindObjectOfType<PlayerWaypoint>().EndRace();
                     otherCar.gameObject.GetComponent<RVP.BasicInput>().enabled = false;
+                    otherCar.gameObject.GetComponent<RVP.MobileInputGet>().enabled = false;
                     GameObject.FindObjectOfType<GameController>().isGameOver = true;
                 }
                 else
