@@ -16,7 +16,6 @@ public class PowerupManager : MonoBehaviour {
     private bool generating = false;
     private float endTime = 0.0f;
     private HUDController _hudcontroller;
-    private GameObject player = null;
     int last = -1;
     int rand_pickup = -1;
 
@@ -45,7 +44,6 @@ public class PowerupManager : MonoBehaviour {
         {
             if (!generating && targetPlayer.GetComponent<Car>().powerup == null)
             {
-                player = targetPlayer;
                 generating = true;
                 endTime = Time.time + 5f;
                 StartCoroutine(GeneratePickup(targetPlayer));
@@ -142,7 +140,6 @@ public class PowerupManager : MonoBehaviour {
                 _hudcontroller.HeldPowerup = rand_pickup;
             }
             
-            player = null;
             generating = false;
         }
     }
