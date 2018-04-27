@@ -15,14 +15,14 @@ public class GraphicExplosion : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
         {
-            if (hit.CompareTag("Car"))
+            if (hit.CompareTag("PlayerCar"))
             {
-                Rigidbody rb = hit.gameObject.transform.parent.GetComponent<Rigidbody>();
+                Rigidbody rb = hit.gameObject.GetComponent<Rigidbody>();
 
                 if (rb != null)
                 {
                     rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
-                    hit.gameObject.transform.parent.GetComponent<Car>().TakeDamage(50);
+                    hit.gameObject.GetComponent<Car>().TakeDamage(50);
                 }
             }
         }

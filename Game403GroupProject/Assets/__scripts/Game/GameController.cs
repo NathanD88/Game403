@@ -63,6 +63,8 @@ public class GameController : MonoBehaviour
 
         countDown = cd_text.GetComponent<Text>();
 
+        hudController.playerNameText.text = playerCar.name;
+
         // Start the countdown
         StartCoroutine(StartCountdown());
     }
@@ -89,7 +91,11 @@ public class GameController : MonoBehaviour
             hudController = GameObject.FindObjectOfType<HUDController>();
         }
 
-        hudController.RaceTime = Time.time - startTime;
+        if (!isGameOver)
+        {
+            hudController.RaceTime = Time.time - startTime;
+        }
+        
         hudController.Position = playerCar.position;
         hudController.CurrentLap = playerCar.currentLap;
         hudController.CurrentArmor = playerCar.armor;

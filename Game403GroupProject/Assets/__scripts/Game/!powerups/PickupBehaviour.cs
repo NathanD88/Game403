@@ -6,9 +6,9 @@ public class PickupBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.parent.CompareTag("PlayerCar"))
+        if(other.CompareTag("PlayerCar"))
         {
-            GameObject targetPlayer = other.transform.parent.gameObject;
+            GameObject targetPlayer = other.gameObject;
             GameObject.FindObjectOfType<PowerupManager>().RandomPickupPlayer(targetPlayer);
             StartCoroutine(DisablePickup(5));
         }

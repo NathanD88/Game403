@@ -14,7 +14,7 @@ public class WayPoint : MonoBehaviour
     {
         Car otherCar = other.GetComponentInParent<Car>();
 
-        if (other.transform.parent.CompareTag("PlayerCar"))
+        if (otherCar != null && other.CompareTag("PlayerCar"))
         {
             // If this is the start waypoint and the car's next waypoint is 0, increase lap
             if (waypointNumber == 0 && otherCar.nextWaypoint == 0)
@@ -24,11 +24,18 @@ public class WayPoint : MonoBehaviour
                     GameObject.FindObjectOfType<PlayerWaypoint>().EndRace();
                     otherCar.gameObject.GetComponent<RVP.BasicInput>().enabled = false;
                     otherCar.gameObject.GetComponent<RVP.MobileInputGet>().enabled = false;
+                    otherCar.gameObject.GetComponent<RVP.FollowAI>().enabled = true;
                     GameObject.FindObjectOfType<GameController>().isGameOver = true;
                 }
                 else
                 {
                     otherCar.currentLap++;
+
+                    if (!otherCar.isAI && otherCar.currentLap != 1)
+                    {
+                        HUDController hud = GameObject.FindObjectOfType<HUDController>();
+                        StartCoroutine(hud.showLapTime(hud.RaceTime, 2.0f, otherCar.currentLap - 1));
+                    }
                 }
             }
 

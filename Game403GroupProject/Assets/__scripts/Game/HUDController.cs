@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
     private int heldPowerup;
     private float raceTime;
     private float speed;
+    private float[] lapTimes = { 0.0f, 0.0f, 0.0f };
 
     private bool lapTimeShowing;
 
@@ -150,6 +151,7 @@ public class HUDController : MonoBehaviour
     public Text countdownText;
     public Image heldItemHUD;
     public Text wrongWayText;
+    public Text playerNameText;
 
 
     [Space(10)]
@@ -193,6 +195,7 @@ public class HUDController : MonoBehaviour
         positionText.color = hudColor;
         lapLabel.color = hudColor;
         countdownText.color = hudColor;
+        playerNameText.color = hudColor;
 }
 
     // Update is called once per frame
@@ -226,19 +229,28 @@ public class HUDController : MonoBehaviour
         else if (heldPowerup == -1)
         {
             heldItemHUD.sprite = null;
+            heldItemHUD.enabled = false;
         }
         else
         {
             heldItemHUD.sprite = powerups[heldPowerup];
+            heldItemHUD.enabled = true;
         }
 	}
 
     // Display the lap time for a specified number of seconds
-    public IEnumerator showLapTime(float lapTime, float timeToDisplay)
+    public IEnumerator showLapTime(float lapTime, float timeToDisplay, int lap)
     {
         // Ensures the coroutine is only running once
+
         lapTimeShowing = true;
-        
+
+        if (lap != 1)
+        {
+            lapTime = lapTime - lapTimes[lap - 2];
+        }
+        lapTimes[lap - 1] = lapTime;
+
         // Convert lap time into minutes and seconds
         float lapTimeMinutes = (int)(lapTime / 60);
         float lapTimeSeconds = lapTime % 60;

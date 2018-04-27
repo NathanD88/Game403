@@ -6,7 +6,7 @@ public class BombBehavior : MonoBehaviour {
     public GameObject explosion_prefab;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Car"))
+        if(other.CompareTag("PlayerCar"))
             Destroy(this.gameObject);
     }
     // Use this for initialization
@@ -15,9 +15,11 @@ public class BombBehavior : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+
+    }
+
     private void OnDestroy()
     {
         Instantiate(explosion_prefab, this.gameObject.transform.position, Quaternion.identity);

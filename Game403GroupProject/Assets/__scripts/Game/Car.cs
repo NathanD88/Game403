@@ -33,8 +33,6 @@ public class Car : MonoBehaviour
         resetView = GetComponent<Rigidbody>().rotation;
         resetPosition = GetComponent<Rigidbody>().transform.position;
 
-        MissileSpawn = gameObject.transform;
-        BombSpawn = gameObject.transform;
         //SetCarStats();
 	}
 	
