@@ -63,6 +63,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9943238b01cdd8c45a98b6e95a9ca24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names:
+  - Nathan
+  - Mark
+  - Nikunj
+  - Matt
+  - Nic
+  - Alejandro
+  - Disco Santa
+  - Bam Bam
+  - John
+  - Jacob
   playerCar: {fileID: 0}
   pauseMenu: {fileID: 0}
   cd_text: {fileID: 0}

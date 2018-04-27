@@ -16,17 +16,17 @@ public class OutOfBounds : MonoBehaviour {
 		
 	}
 
+    // Reset the car to previous waypoint if out of bounds
     private void OnTriggerEnter(Collider other)
     {
-        Car thisCar;
-        if (other.transform.parent.CompareTag("PlayerCar") && (thisCar = other.GetComponentInParent<Car>()))
+        Car thisCar = other.GetComponent<Car>();
+        if (other.CompareTag("PlayerCar") && (thisCar != null))
         {
-            ResetCar(thisCar);
-            //thisCar.GetComponent<Rigidbody>().rotation = thisCar.resetView;
-            
+            ResetCar(thisCar);            
         }
     }
 
+    // Reset car's position, rotation, velocity, and angular velocity to previous waypoint
     public void ResetCar(Car c)
     {
         c.GetComponent<Rigidbody>().velocity = Vector3.zero;

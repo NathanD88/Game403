@@ -7,7 +7,7 @@ public class MissileBehavior : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Car"))
+        if(other.CompareTag("PlayerCar"))
             Destroy(this.gameObject);
     }
     // Use this for initialization
@@ -16,8 +16,15 @@ public class MissileBehavior : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate ()
+    {
         transform.Translate(Vector3.forward * 40 * Time.deltaTime);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + (1.0f - hit.distance), transform.position.z);
+        }
     }
 
     private void OnDestroy()
